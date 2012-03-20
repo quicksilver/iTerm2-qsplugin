@@ -23,7 +23,13 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>QSRegistration</key>
-	<dict/>
+	<dict>
+		<key>QSTerminalMediators</key>
+		<dict>
+			<key>com.googlecode.iterm2</key>
+			<string>QSiTerm2TerminalMediator</string>
+		</dict>
+	</dict>
 	<key>QSRequirementsTemplate</key>
 	<dict>
 		<key>plugins</key>
