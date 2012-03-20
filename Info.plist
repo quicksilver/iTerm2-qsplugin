@@ -21,7 +21,22 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
+	<key>QSPlugIn</key>
+	<dict>
+		<key>author</key>
+		<string>Andreas Johansson</string>
+		<key>categories</key>
+		<array>
+			<string>System</string>
+			<string>Applications</string>
+			<string>Development</string>
+		</array>
+		<key>description</key>
+		<string>Provider for using iTerm2 with the Terminal plugin</string>
+		<key>icon</key>
+		<string>com.googlecode.iterm2</string>
+	</dict>
 	<key>QSRegistration</key>
 	<dict>
 		<key>QSTerminalMediators</key>
@@ -30,7 +45,7 @@
 			<string>QSiTerm2TerminalMediator</string>
 		</dict>
 	</dict>
-	<key>QSRequirementsTemplate</key>
+	<key>QSRequirements</key>
 	<dict>
 		<key>plugins</key>
 		<array>
