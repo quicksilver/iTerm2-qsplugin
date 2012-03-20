@@ -1,0 +1,249 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E1E4B4FE1518E4D00063F299 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E4B4FD1518E4D00063F299 /* Cocoa.framework */; };
+		E1E4B5041518E4D00063F299 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1E4B5021518E4D00063F299 /* InfoPlist.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E1E4B4FA1518E4D00063F299 /* iTerm2.qsplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTerm2.qsplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1E4B4FD1518E4D00063F299 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		E1E4B5011518E4D00063F299 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
+		E1E4B5031518E4D00063F299 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E1E4B5061518E4D00063F299 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
+		E1E4B5071518E4D00063F299 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		E1E4B5081518E4D00063F299 /* Developer.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Developer.xcconfig; sourceTree = "<group>"; };
+		E1E4B5091518E4D00063F299 /* QSPlugIn.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = QSPlugIn.xcconfig; sourceTree = "<group>"; };
+		E1E4B50A1518E4D00063F299 /* QSPlugIn_Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = QSPlugIn_Debug.xcconfig; sourceTree = "<group>"; };
+		E1E4B50B1518E4D00063F299 /* QSPlugIn_Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = QSPlugIn_Release.xcconfig; sourceTree = "<group>"; };
+		E1E4B50C1518E4D00063F299 /* Quicksilver.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Quicksilver.pch; sourceTree = "<group>"; };
+		E1E4B50D1518E4D00063F299 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E1E4B4F61518E4D00063F299 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1E4B4FE1518E4D00063F299 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E1E4B4EE1518E4D00063F299 = {
+			isa = PBXGroup;
+			children = (
+				E1E4B4FF1518E4D00063F299 /* iTerm2 */,
+				E1E4B4FC1518E4D00063F299 /* Frameworks */,
+				E1E4B4FB1518E4D00063F299 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E1E4B4FB1518E4D00063F299 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E1E4B4FA1518E4D00063F299 /* iTerm2.qsplugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E1E4B4FC1518E4D00063F299 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1E4B4FD1518E4D00063F299 /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E1E4B4FF1518E4D00063F299 /* iTerm2 */ = {
+			isa = PBXGroup;
+			children = (
+				E1E4B5051518E4D00063F299 /* Configuration */,
+				E1E4B5001518E4D00063F299 /* Supporting Files */,
+			);
+			path = iTerm2;
+			sourceTree = "<group>";
+		};
+		E1E4B5001518E4D00063F299 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E1E4B5011518E4D00063F299 /* Info.plist */,
+				E1E4B5021518E4D00063F299 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E1E4B5051518E4D00063F299 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				E1E4B5061518E4D00063F299 /* Common.xcconfig */,
+				E1E4B5071518E4D00063F299 /* Debug.xcconfig */,
+				E1E4B5081518E4D00063F299 /* Developer.xcconfig */,
+				E1E4B5091518E4D00063F299 /* QSPlugIn.xcconfig */,
+				E1E4B50A1518E4D00063F299 /* QSPlugIn_Debug.xcconfig */,
+				E1E4B50B1518E4D00063F299 /* QSPlugIn_Release.xcconfig */,
+				E1E4B50C1518E4D00063F299 /* Quicksilver.pch */,
+				E1E4B50D1518E4D00063F299 /* Release.xcconfig */,
+			);
+			name = Configuration;
+			path = /tmp/QS/Configuration;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E1E4B4F91518E4D00063F299 /* iTerm2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1E4B5191518E4D00063F299 /* Build configuration list for PBXNativeTarget "iTerm2" */;
+			buildPhases = (
+				E1E4B4F51518E4D00063F299 /* Sources */,
+				E1E4B4F61518E4D00063F299 /* Frameworks */,
+				E1E4B4F71518E4D00063F299 /* Resources */,
+				E1E4B4F81518E4D00063F299 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iTerm2;
+			productName = iTerm2;
+			productReference = E1E4B4FA1518E4D00063F299 /* iTerm2.qsplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E1E4B4F01518E4D00063F299 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = E1E4B4F31518E4D00063F299 /* Build configuration list for PBXProject "iTerm2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E1E4B4EE1518E4D00063F299;
+			productRefGroup = E1E4B4FB1518E4D00063F299 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E1E4B4F91518E4D00063F299 /* iTerm2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E1E4B4F71518E4D00063F299 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1E4B5041518E4D00063F299 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E1E4B4F81518E4D00063F299 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/iTerm2/bltrversion\" \"$INFOPLIST_FILE\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E1E4B4F51518E4D00063F299 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E1E4B5021518E4D00063F299 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1E4B5031518E4D00063F299 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E1E4B5171518E4D00063F299 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1E4B5071518E4D00063F299 /* Debug.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		E1E4B5181518E4D00063F299 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1E4B50D1518E4D00063F299 /* Release.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		E1E4B51A1518E4D00063F299 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1E4B5091518E4D00063F299 /* QSPlugIn.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E1E4B51B1518E4D00063F299 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1E4B5091518E4D00063F299 /* QSPlugIn.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E1E4B4F31518E4D00063F299 /* Build configuration list for PBXProject "iTerm2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1E4B5171518E4D00063F299 /* Debug */,
+				E1E4B5181518E4D00063F299 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1E4B5191518E4D00063F299 /* Build configuration list for PBXNativeTarget "iTerm2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1E4B51A1518E4D00063F299 /* Debug */,
+				E1E4B51B1518E4D00063F299 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E1E4B4F01518E4D00063F299 /* Project object */;
+}
