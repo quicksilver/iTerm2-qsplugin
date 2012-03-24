@@ -15,4 +15,7 @@
     QSiTerm2TerminalMediator *terminalMediator;
 }
 - (QSObject *) executeText:(QSObject *)directObj;
+- (QSObject *) executeScript:(QSObject *)directObj withArguments:(QSObject *)indirectObj;
+- (NSArray *) validActionsForDirectObject:(QSObject *)directObj indirectObject:(QSObject *)indirectObj;
+- (NSArray *) validIndirectObjectsForAction:(NSString *)action directObject:(QSObject *)directObj;
 @end

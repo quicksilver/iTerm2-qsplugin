@@ -40,6 +40,36 @@
 			<key>name</key>
 			<string>Run a Text Command in iTerm</string>
 		</dict>
+		<key>QSiTerm2ExecuteScript</key>
+		<dict>
+			<key>actionClass</key>
+			<string>QSiTerm2ActionProvider</string>
+			<key>actionSelector</key>
+			<string>executeScript:withArguments:</string>
+			<key>directTypes</key>
+			<array>
+				<string>NSFilenamesPboardType</string>
+			</array>
+			<key>directFileTypes</key>
+			<array>
+				<string>sh</string>
+				<string>pl</string>
+				<string>command</string>
+				<string>php</string>
+				<string>pl</string>
+				<string>py</string>
+				<string>rb</string>
+				<string></string>
+			</array>
+			<key>icon</key>
+			<string>com.googlecode.iterm2</string>
+			<key>indirectOptional</key>
+			<true/>
+			<key>name</key>
+			<string>Run in iTerm [...]</string>
+			<key>validatesObjects</key>
+			<true/>
+		</dict>
 	</dict>
 	<key>QSPlugIn</key>
 	<dict>
