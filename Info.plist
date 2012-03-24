@@ -24,6 +24,10 @@
 	<string>2</string>
 	<key>QSPlugIn</key>
 	<dict>
+		<key>relatedBundles</key>
+		<array>
+			<string>com.googlecode.iterm2</string>
+		</array>
 		<key>author</key>
 		<string>Andreas Johansson</string>
 		<key>categories</key>
@@ -47,6 +51,15 @@
 	</dict>
 	<key>QSRequirements</key>
 	<dict>
+		<key>bundles</key>
+		<array>
+			<dict>
+				<key>id</key>
+				<string>com.googlecode.iterm2</string>
+				<key>name</key>
+				<string>iTerm</string>
+			</dict>
+		</array>
 		<key>plugins</key>
 		<array>
 			<dict>
