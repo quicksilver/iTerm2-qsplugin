@@ -24,10 +24,6 @@
 	<string>2</string>
 	<key>QSPlugIn</key>
 	<dict>
-		<key>relatedBundles</key>
-		<array>
-			<string>com.googlecode.iterm2</string>
-		</array>
 		<key>author</key>
 		<string>Andreas Johansson</string>
 		<key>categories</key>
@@ -38,8 +34,24 @@
 		</array>
 		<key>description</key>
 		<string>Provider for using iTerm2 with the Terminal plugin</string>
+		<key>extendedDescription</key>
+		<string>&lt;h2 id="quicksilver-iterm2-plugin"&gt;Quicksilver iTerm2 plugin&lt;/h2&gt;
+&lt;p&gt;This plugin provides functionality for having commands from the &lt;a href="http://github.com/quicksilver/Terminal-qsplugin"&gt;Terminal plugin&lt;/a&gt; work in &lt;a href="http://www.iterm2.com/"&gt;iTerm2&lt;/a&gt;. It does so by registering iTerm2 as a Command line interface.&lt;/p&gt;
+&lt;p&gt;When the iTerm2 plugin is installed, iTerm2 becomes available as a choice under Command Line Interface in the Handlers section of the Quicksilver preferences.&lt;/p&gt;
+&lt;h3 id="actions"&gt;Actions&lt;/h3&gt;
+&lt;p&gt;This plugin (as of now) does not have any actions of it's own, but the following actions from the Terminal plugin are supported:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Run a Text Command in Terminal - Runs a text command entered in Quicksilver's text mode in the terminal.&lt;/li&gt;
+&lt;li&gt;Run in Terminal [...] - Runs the selected shell script in the terminal&lt;/li&gt;
+&lt;li&gt;Open Parent Directory in Terminal - Opens the selected directory's parent in the terminal&lt;/li&gt;
+&lt;li&gt;Open Directory in Terminal - Opens the selected directory in the terminal&lt;/li&gt;
+&lt;/ul&gt;</string>
 		<key>icon</key>
 		<string>com.googlecode.iterm2</string>
+		<key>relatedBundles</key>
+		<array>
+			<string>com.googlecode.iterm2</string>
+		</array>
 	</dict>
 	<key>QSRegistration</key>
 	<dict>
