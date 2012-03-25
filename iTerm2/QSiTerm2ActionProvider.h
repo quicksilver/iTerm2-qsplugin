@@ -16,6 +16,7 @@
 }
 - (QSObject *) executeText:(QSObject *)directObj;
 - (QSObject *) executeScript:(QSObject *)directObj withArguments:(QSObject *)indirectObj;
+- (QSObject *) openDir:(QSObject *)directObj;
 - (NSArray *) validActionsForDirectObject:(QSObject *)directObj indirectObject:(QSObject *)indirectObj;
 - (NSArray *) validIndirectObjectsForAction:(NSString *)action directObject:(QSObject *)directObj;
 @end

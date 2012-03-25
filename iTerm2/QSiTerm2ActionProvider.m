@@ -9,7 +9,9 @@
 #import "QSiTerm2ActionProvider.h"
 
 #define QSShellScriptTypes [NSArray arrayWithObjects: @"sh", @"pl", @"command", @"php", @"py", @"'TEXT'", @"rb", @"", nil]
+
 #define kQSiTerm2ExecuteScriptAction @"QSiTerm2ExecuteScript"
+#define kQSiTerm2OpenDirAction @"QSiTerm2OpenDir"
 
 @implementation QSiTerm2ActionProvider
 
@@ -72,6 +74,14 @@
 }
 
 
+- (QSObject *) openDir:(QSObject *)directObj {
+    NSString *path = [directObj singleFilePath];
+    NSString *command = [NSString stringWithFormat:@"cd %@", [self escapeString:path]];
+    [terminalMediator performCommandInTerminal:command];
+    return nil;
+}
+
+
 - (NSArray *) validActionsForDirectObject:(QSObject *)directObj indirectObject:(QSObject *)indirectObj {
     if ([directObj objectForType:NSFilenamesPboardType])  {
         NSString *path = [directObj singleFilePath];
@@ -86,8 +96,7 @@
             return nil;
         }
         if (isDirectory) {
-            return nil;
-            //return [NSArray arrayWithObject:kQSCLTermShowDirectoryAction];
+            return [NSArray arrayWithObject:kQSiTerm2OpenDirAction];
         }
         
         if ([QSShellScriptTypes containsObject:[[NSFileManager defaultManager] typeOfFile:path]]) {
