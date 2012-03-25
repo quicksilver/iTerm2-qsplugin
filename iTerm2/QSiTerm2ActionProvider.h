@@ -14,9 +14,12 @@
 @interface QSiTerm2ActionProvider : QSActionProvider {
     QSiTerm2TerminalMediator *terminalMediator;
 }
+
 - (QSObject *) executeText:(QSObject *)directObj;
 - (QSObject *) executeScript:(QSObject *)directObj withArguments:(QSObject *)indirectObj;
 - (QSObject *) openDir:(QSObject *)directObj;
+- (QSObject *) openParent:(QSObject *)directObj;
+
 - (NSArray *) validActionsForDirectObject:(QSObject *)directObj indirectObject:(QSObject *)indirectObj;
 - (NSArray *) validIndirectObjectsForAction:(NSString *)action directObject:(QSObject *)directObj;
 @end

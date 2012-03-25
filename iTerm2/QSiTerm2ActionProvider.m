@@ -12,6 +12,7 @@
 
 #define kQSiTerm2ExecuteScriptAction @"QSiTerm2ExecuteScript"
 #define kQSiTerm2OpenDirAction @"QSiTerm2OpenDir"
+#define kQSiTerm2OpenParentAction @"QSiTerm2OpenParent"
 
 @implementation QSiTerm2ActionProvider
 
@@ -76,9 +77,27 @@
 
 - (QSObject *) openDir:(QSObject *)directObj {
     NSString *path = [directObj singleFilePath];
+    [self openPath:path];
+    return nil;
+}
+
+
+- (QSObject *) openParent:(QSObject *)directObj {
+    NSString *path = [directObj singleFilePath];
+    NSArray *comps = [path pathComponents];
+
+    if ([comps count] > 1) {
+        path = [NSString pathWithComponents:[comps subarrayWithRange:(NSRange){0, [comps count] - 1}]];
+    }
+
+    [self openPath:path];
+    return nil;
+}
+
+
+- (void) openPath:(NSString *)path {
     NSString *command = [NSString stringWithFormat:@"cd %@", [self escapeString:path]];
     [terminalMediator performCommandInTerminal:command];
-    return nil;
 }
 
 
@@ -124,8 +143,7 @@
             }
         }
         
-        return nil;
-        //return [NSArray arrayWithObject:kQSCLTermOpenParentAction];
+        return [NSArray arrayWithObject:kQSiTerm2OpenParentAction];
     }
     
     return nil;

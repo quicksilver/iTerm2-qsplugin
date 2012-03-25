@@ -87,6 +87,23 @@
 			<key>validatesObjects</key>
 			<true/>
 		</dict>
+		<key>QSiTerm2OpenParent</key>
+		<dict>
+			<key>actionClass</key>
+			<string>QSiTerm2ActionProvider</string>
+			<key>actionSelector</key>
+			<string>openParent:</string>
+			<key>directTypes</key>
+			<array>
+				<string>NSFilenamesPboardType</string>
+			</array>
+			<key>icon</key>
+			<string>com.googlecode.iterm2</string>
+			<key>name</key>
+			<string>Open Parent Directory in iTerm</string>
+			<key>validatesObjects</key>
+			<true/>
+		</dict>
 	</dict>
 	<key>QSPlugIn</key>
 	<dict>
