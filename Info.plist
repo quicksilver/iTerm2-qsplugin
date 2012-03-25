@@ -121,13 +121,24 @@
 		<string>&lt;h2 id=&quot;quicksilver-iterm2-plugin&quot;&gt;Quicksilver iTerm2 plugin&lt;/h2&gt;
 &lt;p&gt;This plugin provides functionality for having commands from the &lt;a href=&quot;http://github.com/quicksilver/Terminal-qsplugin&quot;&gt;Terminal plugin&lt;/a&gt; work in &lt;a href=&quot;http://www.iterm2.com/&quot;&gt;iTerm2&lt;/a&gt;. It does so by registering iTerm2 as a Command line interface.&lt;/p&gt;
 &lt;p&gt;When the iTerm2 plugin is installed, iTerm2 becomes available as a choice under Command Line Interface in the Handlers section of the Quicksilver preferences.&lt;/p&gt;
+&lt;p&gt;In addition, this plugin provides iTerm2-specific functionality.&lt;/p&gt;
+&lt;p&gt;This plugin contains adapted code from the &lt;a href=&quot;http://github.com/quicksilver/Terminal-qsplugin&quot;&gt;Terminal plugin&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&quot;actions&quot;&gt;Actions&lt;/h3&gt;
-&lt;p&gt;This plugin (as of now) does not have any actions of it&apos;s own, but the following actions from the Terminal plugin are supported:&lt;/p&gt;
+&lt;p&gt;This plugin supplies the following actions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Run a Text Command in iTerm - Runs a text command entered in Quicksilver&apos;s text mode in iTerm&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Run in iTerm [...] - Runs the selected shell script/binary in iTerm.&lt;/p&gt;
+&lt;p&gt;The target either has to be an executable or a shell script with a #! declaration.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Open Parent Directory in iTerm - Opens the selected directory&apos;s parent in iTerm.&lt;/p&gt;
+&lt;p&gt;This action is only provided for targets that are neither directories nor runnables (Terminal plugin compatibility).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Open Directory in iTerm - Opens the selected directory in iTerm.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When configured as the Command Line Interface for Quicksilver, this plugin also supports the following actions:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Run a Text Command in Terminal - Runs a text command entered in Quicksilver&apos;s text mode in the terminal.&lt;/li&gt;
-&lt;li&gt;Run in Terminal [...] - Runs the selected shell script in the terminal&lt;/li&gt;
-&lt;li&gt;Open Parent Directory in Terminal - Opens the selected directory&apos;s parent in the terminal&lt;/li&gt;
-&lt;li&gt;Open Directory in Terminal - Opens the selected directory in the terminal&lt;/li&gt;
+&lt;li&gt;Run in Terminal [...] - Runs the selected shell script/binary in the terminal.&lt;/li&gt;
+&lt;li&gt;Open Parent Directory in Terminal - Opens the selected directory&apos;s parent in the terminal.&lt;/li&gt;
+&lt;li&gt;Open Directory in Terminal - Opens the selected directory in the terminal.&lt;/li&gt;
 &lt;/ul&gt;</string>
 		<key>icon</key>
 		<string>com.googlecode.iterm2</string>
