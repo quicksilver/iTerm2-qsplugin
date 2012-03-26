@@ -9,12 +9,33 @@
 #import "QSiTerm2TerminalMediator.h"
 
 @implementation QSiTerm2TerminalMediator
+
+
+- (id) init {
+	if (self = [super init]) {
+        iTerm = [[SBApplication applicationWithBundleIdentifier:@"com.googlecode.iterm2"] retain];
+	}
+	return self;
+}
+
+
+- (void) dealloc {
+    [iTerm release];
+    [super dealloc];
+}
+
+
 - (void) performCommandInTerminal: (NSString *)command {
     // iTerm2 does not run the command if there are trailing spaces in the command
     NSString *trimmedCommand = [command stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
 
-    NSAppleScript *termScript=[[[NSAppleScript alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[[NSBundle bundleForClass:[self class]]pathForResource:@"iTerm2" ofType:@"scpt"]] error:nil] autorelease];
+    iTermTerminal *terminal = [[[[iTerm classForScriptingClass:@"terminal"] alloc] init] autorelease];
+    [[iTerm terminals] addObject:terminal];
+    iTermSession *session = [terminal launchSession:@"Default"];
 
-    [termScript executeSubroutine:@"doScript" arguments:trimmedCommand error:nil];
+    // execCommand does not work, this does, don't know why...
+    [session writeContentsOfFile:nil text:trimmedCommand];
 }
+
+
 @end

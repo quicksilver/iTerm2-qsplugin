@@ -7,14 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E188D3F31520F03700176E28 /* iTerm.app in Resources */ = {isa = PBXBuildFile; fileRef = E188D3F21520F03700176E28 /* iTerm.app */; };
+		E188D3F51520F09A00176E28 /* iTerm.app in Sources */ = {isa = PBXBuildFile; fileRef = E188D3F21520F03700176E28 /* iTerm.app */; };
 		E1CFAC71151E6E5D005721A7 /* QSiTerm2ActionProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CFAC70151E6E5D005721A7 /* QSiTerm2ActionProvider.m */; };
 		E1E4B4FE1518E4D00063F299 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E4B4FD1518E4D00063F299 /* Cocoa.framework */; };
 		E1E4B5041518E4D00063F299 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1E4B5021518E4D00063F299 /* InfoPlist.strings */; };
 		E1E4B5221518E6F70063F299 /* QSiTerm2TerminalMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E4B5211518E6F70063F299 /* QSiTerm2TerminalMediator.m */; };
-		E1E4B5251518E7680063F299 /* iTerm2.scpt in Resources */ = {isa = PBXBuildFile; fileRef = E1E4B5241518E7680063F299 /* iTerm2.scpt */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXBuildRule section */
+		E188D3F61520F0E100176E28 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.app";
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILES_DIR)/$(INPUT_FILE_BASE).h",
+			);
+			script = "sdef \"$INPUT_FILE_PATH\" | sdp -fh -o \"$DERIVED_FILES_DIR\" --basename \"$INPUT_FILE_BASE\" --bundleid `defaults read \"$INPUT_FILE_PATH/Contents/Info\" CFBundleIdentifier`";
+		};
+/* End PBXBuildRule section */
+
 /* Begin PBXFileReference section */
+		E188D3F21520F03700176E28 /* iTerm.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = iTerm.app; path = /Applications/iTerm.app; sourceTree = "<absolute>"; };
 		E1CFAC6F151E6E5D005721A7 /* QSiTerm2ActionProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSiTerm2ActionProvider.h; sourceTree = "<group>"; };
 		E1CFAC70151E6E5D005721A7 /* QSiTerm2ActionProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSiTerm2ActionProvider.m; sourceTree = "<group>"; };
 		E1E4B4FA1518E4D00063F299 /* iTerm2.qsplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTerm2.qsplugin; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -31,7 +47,6 @@
 		E1E4B50D1518E4D00063F299 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		E1E4B5201518E6F70063F299 /* QSiTerm2TerminalMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSiTerm2TerminalMediator.h; sourceTree = "<group>"; };
 		E1E4B5211518E6F70063F299 /* QSiTerm2TerminalMediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSiTerm2TerminalMediator.m; sourceTree = "<group>"; };
-		E1E4B5241518E7680063F299 /* iTerm2.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTerm2.scpt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +64,7 @@
 		E1E4B4EE1518E4D00063F299 = {
 			isa = PBXGroup;
 			children = (
+				E188D3F21520F03700176E28 /* iTerm.app */,
 				E1E4B4FF1518E4D00063F299 /* iTerm2 */,
 				E1E4B4FC1518E4D00063F299 /* Frameworks */,
 				E1E4B4FB1518E4D00063F299 /* Products */,
@@ -87,7 +103,6 @@
 		E1E4B5001518E4D00063F299 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E1E4B5241518E7680063F299 /* iTerm2.scpt */,
 				E1E4B5011518E4D00063F299 /* Info.plist */,
 				E1E4B5021518E4D00063F299 /* InfoPlist.strings */,
 			);
@@ -123,6 +138,7 @@
 				E1E4B4F81518E4D00063F299 /* ShellScript */,
 			);
 			buildRules = (
+				E188D3F61520F0E100176E28 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -163,7 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1E4B5041518E4D00063F299 /* InfoPlist.strings in Resources */,
-				E1E4B5251518E7680063F299 /* iTerm2.scpt in Resources */,
+				E188D3F31520F03700176E28 /* iTerm.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E188D3F51520F09A00176E28 /* iTerm.app in Sources */,
 				E1E4B5221518E6F70063F299 /* QSiTerm2TerminalMediator.m in Sources */,
 				E1CFAC71151E6E5D005721A7 /* QSiTerm2ActionProvider.m in Sources */,
 			);

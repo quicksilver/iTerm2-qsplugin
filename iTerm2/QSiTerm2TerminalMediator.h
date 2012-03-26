@@ -7,10 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "iTerm.h"
 
 @protocol QSTerminalMediator
 - (void) performCommandInTerminal: (NSString *)command;
 @end
 
-@interface QSiTerm2TerminalMediator : NSObject <QSTerminalMediator>
+@interface QSiTerm2TerminalMediator : NSObject <QSTerminalMediator> {
+    iTermITermApplication *iTerm;
+}
 @end
