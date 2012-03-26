@@ -13,23 +13,34 @@
 
 - (id) init {
 	if (self = [super init]) {
-        iTerm = [[SBApplication applicationWithBundleIdentifier:@"com.googlecode.iterm2"] retain];
+        iTerm = nil;
 	}
 	return self;
 }
 
 
 - (void) dealloc {
-    [iTerm release];
+    if (iTerm) {
+        [iTerm release];
+    }
     [super dealloc];
 }
 
+
+- (iTermITermApplication *) getApp {
+    if (!iTerm) {
+        iTerm = [[SBApplication applicationWithBundleIdentifier:@"com.googlecode.iterm2"] retain];
+    }
+
+    return iTerm;
+}
 
 - (void) performCommandInTerminal: (NSString *)command {
     // iTerm2 does not run the command if there are trailing spaces in the command
     NSString *trimmedCommand = [command stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
 
-    iTermTerminal *terminal = [[[[iTerm classForScriptingClass:@"terminal"] alloc] init] autorelease];
+    iTermITermApplication *app = [self getApp];
+    iTermTerminal *terminal = [[[[app classForScriptingClass:@"terminal"] alloc] init] autorelease];
     [[iTerm terminals] addObject:terminal];
     iTermSession *session = [terminal launchSession:@"Default"];
 
