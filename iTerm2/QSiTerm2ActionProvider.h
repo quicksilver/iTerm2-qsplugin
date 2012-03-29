@@ -21,6 +21,8 @@
 - (QSObject *) openDir:(QSObject *)directObj;
 - (QSObject *) openParent:(QSObject *)directObj;
 
+- (QSObject *) openSessionWindow:(QSObject *)directObj;
+
 - (NSArray *) validActionsForDirectObject:(QSObject *)directObj indirectObject:(QSObject *)indirectObj;
 - (NSArray *) validIndirectObjectsForAction:(NSString *)action directObject:(QSObject *)directObj;
 @end

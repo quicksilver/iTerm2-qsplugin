@@ -104,6 +104,23 @@
 			<key>validatesObjects</key>
 			<true/>
 		</dict>
+		<key>QSiTerm2OpenSessionWindow</key>
+		<dict>
+			<key>actionClass</key>
+			<string>QSiTerm2ActionProvider</string>
+			<key>actionSelector</key>
+			<string>openSessionWindow:</string>
+			<key>directTypes</key>
+			<array>
+				<string>com.googlecode.iterm2.session</string>
+			</array>
+			<key>icon</key>
+			<string>com.googlecode.iterm2</string>
+			<key>name</key>
+			<string>Open in New Window</string>
+			<key>precedence</key>
+			<integer>4</integer>
+		</dict>
 	</dict>
 	<key>QSPlugIn</key>
 	<dict>
@@ -154,10 +171,25 @@
 			<key>QSiTerm2ActionProvider</key>
 			<string>QSiTerm2ActionProvider</string>
 		</dict>
+		<key>QSBundleChildHandlers</key>
+		<dict>
+			<key>com.googlecode.iterm2</key>
+			<string>QSiTerm2ObjectSource</string>
+		</dict>
 		<key>QSTerminalMediators</key>
 		<dict>
 			<key>com.googlecode.iterm2</key>
 			<string>QSiTerm2TerminalMediator</string>
+		</dict>
+		<key>QSTypeDefinitions</key>
+		<dict>
+			<key>com.googlecode.iterm2.session</key>
+			<dict>
+				<key>icon</key>
+				<string>com.googlecode.iterm2</string>
+				<key>name</key>
+				<string>iTerm Session</string>
+			</dict>
 		</dict>
 	</dict>
 	<key>QSRequirements</key>

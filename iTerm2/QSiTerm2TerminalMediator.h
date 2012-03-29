@@ -17,4 +17,7 @@
 @interface QSiTerm2TerminalMediator : NSObject <QSTerminalMediator> {
     iTermITermApplication *iTerm;
 }
+
+- (void) openSession:(NSString *)sessionName;
+
 @end

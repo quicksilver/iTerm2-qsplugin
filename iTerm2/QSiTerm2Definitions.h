@@ -13,7 +13,11 @@
 #define kQSiTerm2OpenDirAction @"QSiTerm2OpenDir"
 #define kQSiTerm2OpenParentAction @"QSiTerm2OpenParent"
 
+#define kQSiTerm2SessionType @"com.googlecode.iterm2.session"
+
 #define kQSiTerm2Bundle @"com.googlecode.iterm2"
+#define kQSiTerm2SettingsFile @"~/Library/Preferences/com.googlecode.iterm2.plist"
+#define kQSiTerm2SessionSettingsKey @"New Bookmarks"
 
 #define kQSiTerm2StandardSession @"Default"
 

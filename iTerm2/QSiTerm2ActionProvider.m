@@ -95,6 +95,15 @@
 }
 
 
+- (QSObject *) openSessionWindow:(QSObject *)directObj {
+    if ([directObj containsType:kQSiTerm2SessionType]) {
+        NSString *sessionName = [directObj objectForType:kQSiTerm2SessionType];
+        [terminalMediator openSession:sessionName];
+    }
+    return nil;
+}
+
+
 - (NSArray *) validActionsForDirectObject:(QSObject *)directObj indirectObject:(QSObject *)indirectObj {
     if ([directObj objectForType:NSFilenamesPboardType])  {
         NSString *path = [directObj singleFilePath];

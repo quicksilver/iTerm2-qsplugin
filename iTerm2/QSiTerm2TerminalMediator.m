@@ -60,4 +60,11 @@
 }
 
 
+- (void) openSession:(NSString *)sessionName {
+    iTermTerminal *terminal = [self createTerminal];
+    [terminal launchSession:sessionName];
+    [terminal release];
+}
+
+
 @end
