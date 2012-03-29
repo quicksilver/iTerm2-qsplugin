@@ -27,6 +27,9 @@
 }
 
 
+/*
+ Lazy accessor for the top level scripting bridge object
+ */
 - (iTermITermApplication *) getApp {
     if (!iTerm) {
         iTerm = [[SBApplication applicationWithBundleIdentifier:kQSiTerm2Bundle] retain];
@@ -36,6 +39,9 @@
 }
 
 
+/*
+ Creates a new terminal window
+ */
 - (iTermTerminal *) createTerminal {
     iTermITermApplication *app = [self getApp];
     
@@ -46,6 +52,11 @@
 }
 
 
+/*
+ Executes a command in a new terminal window
+ 
+ This method is required for this object to become a global terminal mediator in QS.
+ */
 - (void) performCommandInTerminal:(NSString *)command {
     // iTerm2 does not run the command if there are trailing spaces in the command
     NSString *trimmedCommand = [command stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
@@ -60,6 +71,9 @@
 }
 
 
+/*
+ Open a named session in a new terminal window
+ */
 - (void) openSession:(NSString *)sessionName {
     iTermTerminal *terminal = [self createTerminal];
     [terminal launchSession:sessionName];

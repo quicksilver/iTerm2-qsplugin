@@ -11,6 +11,11 @@
 @implementation QSiTerm2ObjectSource
 
 
+/*
+ QS method that loads the children when right arrowing into an object
+ 
+ Parses the sessions from iTerm2's settings and sets them as children to the iTerm app.
+ */
 - (BOOL) loadChildrenForObject:(QSObject *)object {
     
     if ([[object primaryType] isEqualToString:NSFilenamesPboardType]) {
@@ -25,6 +30,7 @@
         
         id icon = [QSResourceManager imageNamed:kQSiTerm2Bundle];
         
+        // Generate a child object for each of the sessions
         while (session = [sessionEnum nextObject]) {
             NSString *sessionName = [session objectForKey:@"Name"];
             

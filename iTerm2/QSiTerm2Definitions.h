@@ -6,18 +6,25 @@
 //  Copyright (c) 2012 stdin.se. All rights reserved.
 //
 
+// Special shell characters
 #define QSShellEscape @"\\!$&\"'*(){[|;<>?~` "
+
+// File types classified as scripts
 #define QSShellScriptTypes [NSArray arrayWithObjects: @"sh", @"pl", @"command", @"php", @"py", @"'TEXT'", @"rb", @"", nil]
 
+// Action constants, matches those in Info.plist
 #define kQSiTerm2ExecuteScriptAction @"QSiTerm2ExecuteScript"
 #define kQSiTerm2OpenDirAction @"QSiTerm2OpenDir"
 #define kQSiTerm2OpenParentAction @"QSiTerm2OpenParent"
 
+// The type for the iTerm2 session QS objects
 #define kQSiTerm2SessionType @"com.googlecode.iterm2.session"
 
+// iTerm2 settings
 #define kQSiTerm2Bundle @"com.googlecode.iterm2"
 #define kQSiTerm2SettingsFile @"~/Library/Preferences/com.googlecode.iterm2.plist"
-#define kQSiTerm2SessionSettingsKey @"New Bookmarks"
+#define kQSiTerm2SessionSettingsKey @"New Bookmarks" // Sessions are stored under this key...
 
+// The session to use unless otherwise specified
 #define kQSiTerm2StandardSession @"Default"
 

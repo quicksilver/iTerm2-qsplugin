@@ -11,6 +11,7 @@
 
 @interface QSiTerm2ObjectSource : QSObjectSource
 
+// QS method that loads the children when right arrowing into an object
 - (BOOL) loadChildrenForObject:(QSObject *)object;
 
 @end
