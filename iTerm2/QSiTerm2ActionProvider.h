@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "QSiTerm2Definitions.h"
 #import "QSiTerm2TerminalMediator.h"
 
 #define QSShellCommandType @"qs.shellcommand"

@@ -33,6 +33,7 @@
 		E188D3F21520F03700176E28 /* iTerm.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = iTerm.app; path = /Applications/iTerm.app; sourceTree = "<absolute>"; };
 		E1CFAC6F151E6E5D005721A7 /* QSiTerm2ActionProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSiTerm2ActionProvider.h; sourceTree = "<group>"; };
 		E1CFAC70151E6E5D005721A7 /* QSiTerm2ActionProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSiTerm2ActionProvider.m; sourceTree = "<group>"; };
+		E1D165881524BD17004837CC /* QSiTerm2Definitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSiTerm2Definitions.h; sourceTree = "<group>"; };
 		E1E4B4FA1518E4D00063F299 /* iTerm2.qsplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTerm2.qsplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1E4B4FD1518E4D00063F299 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E1E4B5011518E4D00063F299 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
@@ -92,10 +93,11 @@
 			children = (
 				E1E4B5051518E4D00063F299 /* Configuration */,
 				E1E4B5001518E4D00063F299 /* Supporting Files */,
-				E1E4B5201518E6F70063F299 /* QSiTerm2TerminalMediator.h */,
-				E1E4B5211518E6F70063F299 /* QSiTerm2TerminalMediator.m */,
 				E1CFAC6F151E6E5D005721A7 /* QSiTerm2ActionProvider.h */,
 				E1CFAC70151E6E5D005721A7 /* QSiTerm2ActionProvider.m */,
+				E1D165881524BD17004837CC /* QSiTerm2Definitions.h */,
+				E1E4B5201518E6F70063F299 /* QSiTerm2TerminalMediator.h */,
+				E1E4B5211518E6F70063F299 /* QSiTerm2TerminalMediator.m */,
 			);
 			path = iTerm2;
 			sourceTree = "<group>";

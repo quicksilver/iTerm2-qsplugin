@@ -29,7 +29,7 @@
 
 - (iTermITermApplication *) getApp {
     if (!iTerm) {
-        iTerm = [[SBApplication applicationWithBundleIdentifier:@"com.googlecode.iterm2"] retain];
+        iTerm = [[SBApplication applicationWithBundleIdentifier:kQSiTerm2Bundle] retain];
     }
 
     return iTerm;
@@ -48,11 +48,11 @@
 
 - (void) performCommandInTerminal:(NSString *)command {
     // iTerm2 does not run the command if there are trailing spaces in the command
-    NSString *trimmedCommand = [command stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+    NSString *trimmedCommand = [command stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     
     iTermTerminal *terminal = [self createTerminal];
     
-    iTermSession *session = [terminal launchSession:@"Default"];
+    iTermSession *session = [terminal launchSession:kQSiTerm2StandardSession];
     // execCommand does not work, this does, don't know why...
     [session writeContentsOfFile:nil text:trimmedCommand];
     

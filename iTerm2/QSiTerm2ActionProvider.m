@@ -8,12 +8,6 @@
 
 #import "QSiTerm2ActionProvider.h"
 
-#define QSShellScriptTypes [NSArray arrayWithObjects: @"sh", @"pl", @"command", @"php", @"py", @"'TEXT'", @"rb", @"", nil]
-
-#define kQSiTerm2ExecuteScriptAction @"QSiTerm2ExecuteScript"
-#define kQSiTerm2OpenDirAction @"QSiTerm2OpenDir"
-#define kQSiTerm2OpenParentAction @"QSiTerm2OpenParent"
-
 @implementation QSiTerm2ActionProvider
 
 
@@ -157,7 +151,7 @@
 
 
 - (NSString *) escapeString:(NSString *)string {
-    NSString *escapeString = @"\\!$&\"'*(){[|;<>?~` ";
+    NSString *escapeString = QSShellEscape;
     
     int i;
     for (i = 0; i < [escapeString length]; i++){
