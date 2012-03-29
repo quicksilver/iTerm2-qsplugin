@@ -35,17 +35,28 @@
     return iTerm;
 }
 
-- (void) performCommandInTerminal: (NSString *)command {
+
+- (iTermTerminal *) createTerminal {
+    iTermITermApplication *app = [self getApp];
+    
+    iTermTerminal *terminal = [[[app classForScriptingClass:@"terminal"] alloc] init];
+    [[iTerm terminals] addObject:terminal];
+    
+    return terminal;
+}
+
+
+- (void) performCommandInTerminal:(NSString *)command {
     // iTerm2 does not run the command if there are trailing spaces in the command
     NSString *trimmedCommand = [command stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
-
-    iTermITermApplication *app = [self getApp];
-    iTermTerminal *terminal = [[[[app classForScriptingClass:@"terminal"] alloc] init] autorelease];
-    [[iTerm terminals] addObject:terminal];
+    
+    iTermTerminal *terminal = [self createTerminal];
+    
     iTermSession *session = [terminal launchSession:@"Default"];
-
     // execCommand does not work, this does, don't know why...
     [session writeContentsOfFile:nil text:trimmedCommand];
+    
+    [terminal release];
 }
 
 
