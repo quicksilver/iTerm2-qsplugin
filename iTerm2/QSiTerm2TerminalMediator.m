@@ -11,42 +11,14 @@
 @implementation QSiTerm2TerminalMediator
 
 
-- (id) init {
-	if (self = [super init]) {
-        iTerm = nil;
-	}
-	return self;
-}
-
-
-- (void) dealloc {
-    if (iTerm) {
-        [iTerm release];
-    }
-    [super dealloc];
-}
-
-
-/*
- Lazy accessor for the top level scripting bridge object
- */
-- (iTermITermApplication *) getApp {
-    if (!iTerm) {
-        iTerm = [[SBApplication applicationWithBundleIdentifier:kQSiTerm2Bundle] retain];
-    }
-
-    return iTerm;
-}
-
-
 /*
  Creates a new terminal window
  */
 - (iTermTerminal *) createTerminal {
-    iTermITermApplication *app = [self getApp];
+    iTermITermApplication *app = [SBApplication applicationWithBundleIdentifier:kQSiTerm2Bundle];
     
     iTermTerminal *terminal = [[[app classForScriptingClass:@"terminal"] alloc] init];
-    [[iTerm terminals] addObject:terminal];
+    [[app terminals] addObject:terminal];
     
     return [terminal autorelease];
 }
@@ -73,8 +45,10 @@
  Open a named session in a new terminal window
  */
 - (void) openSession:(NSString *)sessionName inTab:(BOOL)inTab {
-    if (inTab && [[iTerm terminals] count] > 0) {
-        [iTerm.currentTerminal launchSession:sessionName];
+    iTermITermApplication *app = [SBApplication applicationWithBundleIdentifier:kQSiTerm2Bundle];
+
+    if (inTab && [[app terminals] count] > 0) {
+        [app.currentTerminal launchSession:sessionName];
     } else {
         iTermTerminal *terminal = [self createTerminal];
         [terminal launchSession:sessionName];

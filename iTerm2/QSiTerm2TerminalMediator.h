@@ -16,10 +16,7 @@
 - (void) performCommandInTerminal: (NSString *)command;
 @end
 
-@interface QSiTerm2TerminalMediator : NSObject <QSTerminalMediator> {
-    // Scripting bridge app, see build rules for the source
-    iTermITermApplication *iTerm;
-}
+@interface QSiTerm2TerminalMediator : NSObject <QSTerminalMediator>
 
 // Open a named session in a new terminal window
 - (void) openSession:(NSString *)sessionName inTab:(BOOL)inTab;
