@@ -130,7 +130,19 @@
 - (QSObject *) openSessionWindow:(QSObject *)directObj {
     if ([directObj containsType:kQSiTerm2SessionType]) {
         NSString *sessionName = [directObj objectForType:kQSiTerm2SessionType];
-        [terminalMediator openSession:sessionName];
+        [terminalMediator openSession:sessionName inTab:NO];
+    }
+    return nil;
+}
+
+
+/*
+ Open an iTerm session in tab in the current terminal
+ */
+- (QSObject *) openSessionTab:(QSObject *)directObj {
+    if ([directObj containsType:kQSiTerm2SessionType]) {
+        NSString *sessionName = [directObj objectForType:kQSiTerm2SessionType];
+        [terminalMediator openSession:sessionName inTab:YES];
     }
     return nil;
 }

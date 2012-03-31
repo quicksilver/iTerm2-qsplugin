@@ -22,6 +22,6 @@
 }
 
 // Open a named session in a new terminal window
-- (void) openSession:(NSString *)sessionName;
+- (void) openSession:(NSString *)sessionName inTab:(BOOL)inTab;
 
 @end

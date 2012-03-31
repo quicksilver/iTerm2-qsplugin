@@ -48,7 +48,7 @@
     iTermTerminal *terminal = [[[app classForScriptingClass:@"terminal"] alloc] init];
     [[iTerm terminals] addObject:terminal];
     
-    return terminal;
+    return [terminal autorelease];
 }
 
 
@@ -66,18 +66,19 @@
     iTermSession *session = [terminal launchSession:kQSiTerm2StandardSession];
     // execCommand does not work, this does, don't know why...
     [session writeContentsOfFile:nil text:trimmedCommand];
-    
-    [terminal release];
 }
 
 
 /*
  Open a named session in a new terminal window
  */
-- (void) openSession:(NSString *)sessionName {
-    iTermTerminal *terminal = [self createTerminal];
-    [terminal launchSession:sessionName];
-    [terminal release];
+- (void) openSession:(NSString *)sessionName inTab:(BOOL)inTab {
+    if (inTab && [[iTerm terminals] count] > 0) {
+        [iTerm.currentTerminal launchSession:sessionName];
+    } else {
+        iTermTerminal *terminal = [self createTerminal];
+        [terminal launchSession:sessionName];
+    }
 }
 
 

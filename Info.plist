@@ -121,6 +121,23 @@
 			<key>precedence</key>
 			<integer>4</integer>
 		</dict>
+		<key>QSiTerm2OpenSessionTab</key>
+		<dict>
+			<key>actionClass</key>
+			<string>QSiTerm2ActionProvider</string>
+			<key>actionSelector</key>
+			<string>openSessionTab:</string>
+			<key>directTypes</key>
+			<array>
+				<string>com.googlecode.iterm2.session</string>
+			</array>
+			<key>icon</key>
+			<string>com.googlecode.iterm2</string>
+			<key>name</key>
+			<string>Open in New Tab</string>
+			<key>precedence</key>
+			<integer>4</integer>
+		</dict>
 	</dict>
 	<key>QSPlugIn</key>
 	<dict>

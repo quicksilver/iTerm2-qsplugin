@@ -29,6 +29,8 @@
 
 // Open an iTerm session in a window
 - (QSObject *) openSessionWindow:(QSObject *)directObj;
+// Open an iTerm session in a new tab
+- (QSObject *) openSessionTab:(QSObject *)directObj;
 
 // Quicksilver validation methods
 - (NSArray *) validActionsForDirectObject:(QSObject *)directObj indirectObject:(QSObject *)indirectObj;
