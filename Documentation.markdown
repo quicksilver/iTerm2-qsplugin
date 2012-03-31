@@ -45,4 +45,5 @@ supports the following actions:
 The following actions are available for iTerm sessions:
 
  * **Open in New Window** - Opens a new terminal window with the selected session
+ * **Open in New Tab** - Opens a new tab with the selected session in the current terminal
 

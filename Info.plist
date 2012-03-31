@@ -181,6 +181,7 @@
 &lt;p&gt;The following actions are available for iTerm sessions:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Open in New Window&lt;/strong&gt; - Opens a new terminal window with the selected session&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Open in New Tab&lt;/strong&gt; - Opens a new tab with the selected session in the current terminal&lt;/li&gt;
 &lt;/ul&gt;</string>
 		<key>icon</key>
 		<string>com.googlecode.iterm2</string>
