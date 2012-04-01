@@ -16,6 +16,9 @@
 #define kQSiTerm2ExecuteScriptAction @"QSiTerm2ExecuteScript"
 #define kQSiTerm2OpenDirAction @"QSiTerm2OpenDir"
 #define kQSiTerm2OpenParentAction @"QSiTerm2OpenParent"
+#define kQSiTerm2ExecuteScriptInTabAction @"QSiTerm2ExecuteScriptInTab"
+#define kQSiTerm2OpenDirInTabAction @"QSiTerm2OpenDirInTab"
+#define kQSiTerm2OpenParentInTabAction @"QSiTerm2OpenParentInTab"
 
 // The type for the iTerm2 session QS objects
 #define kQSiTerm2SessionType @"com.googlecode.iterm2.session"

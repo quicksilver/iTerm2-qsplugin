@@ -30,6 +30,8 @@
 			<string>QSiTerm2ActionProvider</string>
 			<key>actionSelector</key>
 			<string>executeText:</string>
+			<key>alternateAction</key>
+			<string>QSiTerm2ExecuteTextInTab</string>
 			<key>directTypes</key>
 			<array>
 				<string>qs.shellcommand</string>
@@ -40,12 +42,36 @@
 			<key>name</key>
 			<string>Run a Text Command in iTerm</string>
 		</dict>
+		<key>QSiTerm2ExecuteTextInTab</key>
+		<dict>
+			<key>actionClass</key>
+			<string>QSiTerm2ActionProvider</string>
+			<key>actionSelector</key>
+			<string>executeTextInTab:</string>
+			<key>alternateAction</key>
+			<string>QSiTerm2ExecuteText</string>
+			<key>directTypes</key>
+			<array>
+				<string>qs.shellcommand</string>
+				<string>NSStringPboardType</string>
+			</array>
+			<key>icon</key>
+			<string>com.googlecode.iterm2</string>
+			<key>name</key>
+			<string>Run a Text Command in an iTerm Tab</string>
+			<key>description</key>
+			<string>In the current terminal</string>
+			<key>enabled</key>
+			<false/>
+		</dict>
 		<key>QSiTerm2ExecuteScript</key>
 		<dict>
 			<key>actionClass</key>
 			<string>QSiTerm2ActionProvider</string>
 			<key>actionSelector</key>
 			<string>executeScript:withArguments:</string>
+			<key>alternateAction</key>
+			<string>QSiTerm2ExecuteScriptInTab</string>
 			<key>directTypes</key>
 			<array>
 				<string>NSFilenamesPboardType</string>
@@ -70,12 +96,50 @@
 			<key>validatesObjects</key>
 			<true/>
 		</dict>
+		<key>QSiTerm2ExecuteScriptInTab</key>
+		<dict>
+			<key>actionClass</key>
+			<string>QSiTerm2ActionProvider</string>
+			<key>actionSelector</key>
+			<string>executeScriptInTab:withArguments:</string>
+			<key>alternateAction</key>
+			<string>QSiTerm2ExecuteScript</string>
+			<key>directTypes</key>
+			<array>
+				<string>NSFilenamesPboardType</string>
+			</array>
+			<key>directFileTypes</key>
+			<array>
+				<string>sh</string>
+				<string>pl</string>
+				<string>command</string>
+				<string>php</string>
+				<string>pl</string>
+				<string>py</string>
+				<string>rb</string>
+				<string></string>
+			</array>
+			<key>icon</key>
+			<string>com.googlecode.iterm2</string>
+			<key>indirectOptional</key>
+			<true/>
+			<key>name</key>
+			<string>Run in an iTerm Tab [...]</string>
+			<key>description</key>
+			<string>In the current terminal</string>
+			<key>validatesObjects</key>
+			<true/>
+			<key>enabled</key>
+			<false/>
+		</dict>
 		<key>QSiTerm2OpenDir</key>
 		<dict>
 			<key>actionClass</key>
 			<string>QSiTerm2ActionProvider</string>
 			<key>actionSelector</key>
 			<string>openDir:</string>
+			<key>alternateAction</key>
+			<string>QSiTerm2OpenDirInTab</string>
 			<key>directTypes</key>
 			<array>
 				<string>NSFilenamesPboardType</string>
@@ -87,12 +151,37 @@
 			<key>validatesObjects</key>
 			<true/>
 		</dict>
+		<key>QSiTerm2OpenDirInTab</key>
+		<dict>
+			<key>actionClass</key>
+			<string>QSiTerm2ActionProvider</string>
+			<key>actionSelector</key>
+			<string>openDirInTab:</string>
+			<key>alternateAction</key>
+			<string>QSiTerm2OpenDir</string>
+			<key>directTypes</key>
+			<array>
+				<string>NSFilenamesPboardType</string>
+			</array>
+			<key>icon</key>
+			<string>com.googlecode.iterm2</string>
+			<key>name</key>
+			<string>Open Directory in iTerm Tab</string>
+			<key>description</key>
+			<string>In the current terminal</string>
+			<key>validatesObjects</key>
+			<true/>
+			<key>enabled</key>
+			<false/>
+		</dict>
 		<key>QSiTerm2OpenParent</key>
 		<dict>
 			<key>actionClass</key>
 			<string>QSiTerm2ActionProvider</string>
 			<key>actionSelector</key>
 			<string>openParent:</string>
+			<key>alternateAction</key>
+			<string>QSiTerm2OpenParentInTab</string>
 			<key>directTypes</key>
 			<array>
 				<string>NSFilenamesPboardType</string>
@@ -103,6 +192,29 @@
 			<string>Open Parent Directory in iTerm</string>
 			<key>validatesObjects</key>
 			<true/>
+		</dict>
+		<key>QSiTerm2OpenParentInTab</key>
+		<dict>
+			<key>actionClass</key>
+			<string>QSiTerm2ActionProvider</string>
+			<key>actionSelector</key>
+			<string>openParentInTab:</string>
+			<key>alternateAction</key>
+			<string>QSiTerm2OpenParent</string>
+			<key>directTypes</key>
+			<array>
+				<string>NSFilenamesPboardType</string>
+			</array>
+			<key>icon</key>
+			<string>com.googlecode.iterm2</string>
+			<key>name</key>
+			<string>Open Parent Directory in iTerm Tab</string>
+			<key>description</key>
+			<string>In the current terminal</string>
+			<key>validatesObjects</key>
+			<true/>
+			<key>enabled</key>
+			<false/>
 		</dict>
 		<key>QSiTerm2OpenSessionWindow</key>
 		<dict>

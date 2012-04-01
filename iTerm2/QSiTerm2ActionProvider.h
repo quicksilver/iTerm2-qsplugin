@@ -18,14 +18,22 @@
     QSiTerm2TerminalMediator *terminalMediator;
 }
 
-// Execute text in a new terminal
+// Execute text
 - (QSObject *) executeText:(QSObject *)directObj;
-// Execute a script in a new terminal
+- (QSObject *) executeTextInTab:(QSObject *)directObj;
+- (QSObject *) executeText:(QSObject *)directObj inTab:(BOOL)inTab;
+// Execute a script
 - (QSObject *) executeScript:(QSObject *)directObj withArguments:(QSObject *)indirectObj;
-// Open directory in a new terminal
+- (QSObject *) executeScriptInTab:(QSObject *)directObj withArguments:(QSObject *)indirectObj;
+- (QSObject *) executeScript:(QSObject *)directObj withArguments:(QSObject *)indirectObj inTab:(BOOL)inTab;
+// Open directory
 - (QSObject *) openDir:(QSObject *)directObj;
-// Open an object's parent in a new terminal
+- (QSObject *) openDirInTab:(QSObject *)directObj;
+- (QSObject *) openDir:(QSObject *)directObj inTab:(BOOL)inTab;
+// Open an object's parent
 - (QSObject *) openParent:(QSObject *)directObj;
+- (QSObject *) openParentInTab:(QSObject *)directObj;
+- (QSObject *) openParent:(QSObject *)directObj inTab:(BOOL)inTab;
 
 // Open an iTerm session in a window
 - (QSObject *) openSessionWindow:(QSObject *)directObj;
