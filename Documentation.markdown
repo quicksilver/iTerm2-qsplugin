@@ -21,18 +21,63 @@ plugin](http://github.com/quicksilver/Terminal-qsplugin).
 
 This plugin supplies the following actions:
 
- * **Run a Text Command in iTerm** - Runs a text command entered in Quicksilver's text mode in iTerm
+ * **Run a Text Command in iTerm** - Runs a text command entered in Quicksilver's text mode in iTerm.
+
+    The action opens a new terminal. The alternate action is **Run a Text
+    Command in iTerm Tab**.
+
+    Disabled by default.
+
+ * **Run a Text Command in iTerm Tab** - Runs a text command entered in Quicksilver's text mode in iTerm.
+
+    The action opens a new tab in the current terminal. The alternate action is
+    **Run a Text Command in iTerm**.
 
  * **Run in iTerm [...]** - Runs the selected shell script/binary in iTerm.
 
-     The target either has to be an executable or a shell script with a #! declaration.
+    The target either has to be an executable or a shell script with a #!
+    declaration.
+
+    The action opens a new terminal. The alternate action is **Run in iTerm Tab
+    [...]**.
+
+ * **Run in iTerm Tab [...]** - Runs the selected shell script/binary in iTerm.
+
+    The target either has to be an executable or a shell script with a #!
+    declaration.
+
+    The action opens a new tab in the current terminal. The alternate action is
+    **Run in iTerm [...]**.
+
+    Disabled by default.
 
  * **Open Parent Directory in iTerm** - Opens the selected directory's parent in iTerm.
 
-     This action is only provided for targets that are neither directories nor
-     runnables (Terminal plugin compatibility).
+    This action is only provided for targets that are neither directories nor
+    runnables (Terminal plugin compatibility).
+
+    The action opens a new terminal. The alternate action is **Open Parent
+    Directory in iTerm Tab**.
+
+ * **Open Parent Directory in iTerm tab** - Opens the selected directory's parent in iTerm.
+
+    This action is only provided for targets that are neither directories nor
+    runnables (Terminal plugin compatibility).
+
+    The action opens a new tab in the current terminal. The alternate action is
+    **Open Parent Directory in iTerm**.
+
+    Disabled by default.
 
  * **Open Directory in iTerm** - Opens the selected directory in iTerm.
+
+    The action opens a new terminal. The alternate action is **Open Directory
+    in iTerm Tab**.
+
+ * **Open Directory in iTerm** - Opens the selected directory in iTerm.
+
+    The action opens a new tab in the current terminal. The alternate action is
+    **Open Directory in iTerm**.
 
 When configured as the Command Line Interface for Quicksilver, this plugin also
 supports the following actions:
