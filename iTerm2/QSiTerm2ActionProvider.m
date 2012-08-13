@@ -300,7 +300,7 @@
 - (NSString *) escapeString:(NSString *)string {
     NSString *escapeString = QSShellEscape;
     
-    int i;
+    NSUInteger i;
     for (i = 0; i < [escapeString length]; i++){
         NSString *thisString = [escapeString substringWithRange:NSMakeRange(i,1)];
         string = [[string componentsSeparatedByString:thisString] componentsJoinedByString:[@"\\" stringByAppendingString:thisString]];
