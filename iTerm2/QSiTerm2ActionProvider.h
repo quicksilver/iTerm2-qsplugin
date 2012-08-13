@@ -21,19 +21,23 @@
 // Execute text
 - (QSObject *) executeText:(QSObject *)directObj;
 - (QSObject *) executeTextInTab:(QSObject *)directObj;
-- (QSObject *) executeText:(QSObject *)directObj inTab:(BOOL)inTab;
+- (QSObject *) executeTextInCurrent:(QSObject *)directObj;
+- (QSObject *) executeText:(QSObject *)directObj inTab:(BOOL)inTab inCurrent:(BOOL)inCurrent;
 // Execute a script
 - (QSObject *) executeScript:(QSObject *)directObj withArguments:(QSObject *)indirectObj;
 - (QSObject *) executeScriptInTab:(QSObject *)directObj withArguments:(QSObject *)indirectObj;
-- (QSObject *) executeScript:(QSObject *)directObj withArguments:(QSObject *)indirectObj inTab:(BOOL)inTab;
+- (QSObject *) executeScriptInCurrent:(QSObject *)directObj withArguments:(QSObject *)indirectObj;
+- (QSObject *) executeScript:(QSObject *)directObj withArguments:(QSObject *)indirectObj inTab:(BOOL)inTab inCurrent:(BOOL)inCurrent;
 // Open directory
 - (QSObject *) openDir:(QSObject *)directObj;
 - (QSObject *) openDirInTab:(QSObject *)directObj;
-- (QSObject *) openDir:(QSObject *)directObj inTab:(BOOL)inTab;
+- (QSObject *) openDirInCurrent:(QSObject *)directObj;
+- (QSObject *) openDir:(QSObject *)directObj inTab:(BOOL)inTab inCurrent:(BOOL)inCurrent;
 // Open an object's parent
 - (QSObject *) openParent:(QSObject *)directObj;
 - (QSObject *) openParentInTab:(QSObject *)directObj;
-- (QSObject *) openParent:(QSObject *)directObj inTab:(BOOL)inTab;
+- (QSObject *) openParentInCurrent:(QSObject *)directObj;
+- (QSObject *) openParent:(QSObject *)directObj inTab:(BOOL)inTab inCurrent:(BOOL)inCurrent;
 
 // Open an iTerm session in a window
 - (QSObject *) openSessionWindow:(QSObject *)directObj;

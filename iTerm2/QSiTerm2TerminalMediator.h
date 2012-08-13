@@ -21,6 +21,9 @@
 // Executes a command in a new tab in the current terminal
 - (void) performCommandInTerminalTab: (NSString *)command;
 
+// Executes a command in a new tab in the current terminal
+- (void) performCommandInCurrentTerminal: (NSString *)command;
+
 // Open a named session in a new terminal window
 - (void) openSession:(NSString *)sessionName inTab:(BOOL)inTab;
 

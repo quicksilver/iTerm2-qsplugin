@@ -62,6 +62,20 @@
     [session writeContentsOfFile:nil text:trimmedCommand];
 }
 
+/*
+ Executes a command in the current terminal
+ */
+- (void) performCommandInCurrentTerminal: (NSString *)command {
+    // iTerm2 does not run the command if there are trailing spaces in the command
+    NSString *trimmedCommand = [command stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    
+    iTermITermApplication *app = [SBApplication applicationWithBundleIdentifier:kQSiTerm2Bundle];
+    
+    [app activate];
+    
+    // execCommand does not work, this does, don't know why...
+    [app.currentTerminal.currentSession writeContentsOfFile:nil text:trimmedCommand];
+}
 
 /*
  Open a named session in a new terminal window
