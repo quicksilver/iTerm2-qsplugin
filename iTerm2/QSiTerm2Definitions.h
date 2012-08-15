@@ -34,3 +34,6 @@
 // The session to use unless otherwise specified
 #define kQSiTerm2StandardSession @"Default"
 
+// Bytes read in unknown files
+#define kQSiTerm2UnknownBufSize 5
+

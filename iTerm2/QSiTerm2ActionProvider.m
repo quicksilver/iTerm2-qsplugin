@@ -290,10 +290,13 @@
             BOOL executable = [[NSFileManager defaultManager] isExecutableFileAtPath:path];
             
             if (!executable) {
-                NSString *contents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-                if ([contents hasPrefix:@"#!"]) {
+                NSFileHandle *file = [NSFileHandle fileHandleForReadingAtPath:path];
+                NSData *buffer = [file readDataOfLength:kQSiTerm2UnknownBufSize];
+                NSString *header = [[NSString alloc] initWithData:buffer encoding:NSUTF8StringEncoding];
+                if ([header hasPrefix:@"#!"]) {
                     executable = YES;
-                }            
+                }
+                [header release];
             } else {
                 LSItemInfoRecord infoRec;
                 LSCopyItemInfoForURL((CFURLRef)[NSURL fileURLWithPath:path], kLSRequestBasicFlagsOnly, &infoRec);
