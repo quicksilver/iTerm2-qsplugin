@@ -115,9 +115,27 @@
     BOOL isExecutable = [[NSFileManager defaultManager] isExecutableFileAtPath:script];
     
     if (!isExecutable) {
+        
+        NSFileHandle *file = [NSFileHandle fileHandleForReadingAtPath:script];
+        NSData *buffer;
+        NSMutableString *header = [NSMutableString stringWithCapacity:kQSiTerm2UnknownBufSize];
+        
+        // Read bytes until newline or end of file
+        while (true) {
+            buffer = [file readDataOfLength:kQSiTerm2UnknownBufSize];
+            NSString *temp = [[NSString alloc] initWithData:buffer encoding:NSUTF8StringEncoding];
+            [header appendString:temp];
+            [temp release];
+            
+            if (buffer.length < kQSiTerm2UnknownBufSize
+                || [header rangeOfString:@"\r"].location != NSNotFound
+                || [header rangeOfString:@"\n"].location != NSNotFound) {
+                break;
+            }
+        }
+        
         // Parse the hash bang
-        NSString *contents = [NSString stringWithContentsOfFile:script encoding:NSUTF8StringEncoding error:nil];
-        NSScanner *scanner = [NSScanner scannerWithString:contents];
+        NSScanner *scanner = [NSScanner scannerWithString:header];
         [scanner scanString:@"#!" intoString:nil];
         [scanner scanUpToCharactersFromSet:[NSCharacterSet characterSetWithCharactersInString:@"\r\n"] intoString:&executable];
     }
