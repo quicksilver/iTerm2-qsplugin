@@ -19,25 +19,25 @@
 }
 
 // Execute text
-- (QSObject *) executeText:(QSObject *)directObj;
+- (QSObject *) executeText:(QSObject *)directObj target:(QSTerminalTarget)target;
+- (QSObject *) executeTextInWindow:(QSObject *)directObj;
 - (QSObject *) executeTextInTab:(QSObject *)directObj;
 - (QSObject *) executeTextInCurrent:(QSObject *)directObj;
-- (QSObject *) executeText:(QSObject *)directObj inTab:(BOOL)inTab inCurrent:(BOOL)inCurrent;
 // Execute a script
-- (QSObject *) executeScript:(QSObject *)directObj withArguments:(QSObject *)indirectObj;
+- (QSObject *) executeScript:(QSObject *)directObj withArguments:(QSObject *)indirectObj target:(QSTerminalTarget) target;
+- (QSObject *) executeScriptInWindow:(QSObject *)directObj withArguments:(QSObject *)indirectObj;
 - (QSObject *) executeScriptInTab:(QSObject *)directObj withArguments:(QSObject *)indirectObj;
 - (QSObject *) executeScriptInCurrent:(QSObject *)directObj withArguments:(QSObject *)indirectObj;
-- (QSObject *) executeScript:(QSObject *)directObj withArguments:(QSObject *)indirectObj inTab:(BOOL)inTab inCurrent:(BOOL)inCurrent;
 // Open directory
-- (QSObject *) openDir:(QSObject *)directObj;
+- (QSObject *) openDir:(QSObject *)directObj target:(QSTerminalTarget)target;
+- (QSObject *) openDirInWindow:(QSObject *)directObj;
 - (QSObject *) openDirInTab:(QSObject *)directObj;
 - (QSObject *) openDirInCurrent:(QSObject *)directObj;
-- (QSObject *) openDir:(QSObject *)directObj inTab:(BOOL)inTab inCurrent:(BOOL)inCurrent;
 // Open an object's parent
-- (QSObject *) openParent:(QSObject *)directObj;
+- (QSObject *) openParent:(QSObject *)directObj target:(QSTerminalTarget)target;
+- (QSObject *) openParentInWindow:(QSObject *)directObj;
 - (QSObject *) openParentInTab:(QSObject *)directObj;
 - (QSObject *) openParentInCurrent:(QSObject *)directObj;
-- (QSObject *) openParent:(QSObject *)directObj inTab:(BOOL)inTab inCurrent:(BOOL)inCurrent;
 
 // Open an iTerm session in a window
 - (QSObject *) openSessionWindow:(QSObject *)directObj;

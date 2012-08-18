@@ -13,12 +13,14 @@
 #define QSShellScriptTypes [NSArray arrayWithObjects: @"sh", @"pl", @"command", @"php", @"py", @"'TEXT'", @"rb", @"", nil]
 
 // Action constants, matches those in Info.plist
-#define kQSiTerm2ExecuteScriptAction @"QSiTerm2ExecuteScript"
-#define kQSiTerm2OpenDirAction @"QSiTerm2OpenDir"
-#define kQSiTerm2OpenParentAction @"QSiTerm2OpenParent"
+#define kQSiTerm2ExecuteScriptInWindowAction @"QSiTerm2ExecuteScriptInWindow"
+#define kQSiTerm2OpenDirInWindowAction @"QSiTerm2OpenDirInWindow"
+#define kQSiTerm2OpenParentInWindowAction @"QSiTerm2OpenParentInWindow"
+
 #define kQSiTerm2ExecuteScriptInTabAction @"QSiTerm2ExecuteScriptInTab"
 #define kQSiTerm2OpenDirInTabAction @"QSiTerm2OpenDirInTab"
 #define kQSiTerm2OpenParentInTabAction @"QSiTerm2OpenParentInTab"
+
 #define kQSiTerm2ExecuteScriptInCurrentAction @"QSiTerm2ExecuteScriptInCurrent"
 #define kQSiTerm2OpenDirInCurrentAction @"QSiTerm2OpenDirInCurrent"
 #define kQSiTerm2OpenParentInCurrentAction @"QSiTerm2OpenParentInCurrent"

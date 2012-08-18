@@ -26,10 +26,29 @@
 
 
 /*
+ Execute text
+ 
+ This method takes objects classified as shell commands and executes
+ the commands in a new iTerm terminal window or a new tab in the
+ current terminal.
+ */
+- (QSObject *) executeText:(QSObject *)directObj target:(QSTerminalTarget)target {
+    NSString *command = [directObj objectForType:QSShellCommandType];
+    
+    if (!command) {
+        command = [directObj stringValue];
+    }
+    
+    [terminalMediator performCommandInTerminal:command target:target];
+    
+    return nil;
+}
+
+/*
  Execute text in a new terminal
  */
-- (QSObject *) executeText:(QSObject *)directObj {
-    return [self executeText:directObj inTab:NO inCurrent:NO];
+- (QSObject *) executeTextInWindow:(QSObject *)directObj {
+    return [self executeText:directObj target:QSTerminalTargetWindow];
 }
 
 
@@ -37,63 +56,14 @@
  Execute text in a new tab in the current terminal
  */
 - (QSObject *) executeTextInTab:(QSObject *)directObj {
-    return [self executeText:directObj inTab:YES inCurrent:NO];
+    return [self executeText:directObj target:QSTerminalTargetTab];
 }
 
 /*
  Execute text in the current terminal
  */
 - (QSObject *) executeTextInCurrent:(QSObject *)directObj {
-    return [self executeText:directObj inTab:NO inCurrent:YES];
-}
-
-
-/*
- Execute text
- 
- This method takes objects classified as shell commands and executes
- the commands in a new iTerm terminal window or a new tab in the
- current terminal.
- */
-- (QSObject *) executeText:(QSObject *)directObj inTab:(BOOL)inTab inCurrent:(BOOL)inCurrent {
-    NSString *command = [directObj objectForType:QSShellCommandType];
-    
-    if (!command) {
-        command = [directObj stringValue];
-    }
-    
-    if (inTab) {
-        [terminalMediator performCommandInTerminalTab:command];
-    } else if (inCurrent) {
-        [terminalMediator performCommandInCurrentTerminal:command];
-    } else {
-        [terminalMediator performCommandInTerminal:command];
-    }
-    
-    return nil;
-}
-
-
-/*
- Execute a script in a new terminal
- */
-- (QSObject *) executeScript:(QSObject *)directObj withArguments: (QSObject *)indirectObj {
-    return [self executeScript:directObj withArguments:indirectObj inTab:NO inCurrent:NO];
-}
-
-
-/*
- Execute a script in a new terminal
- */
-- (QSObject *) executeScriptInTab:(QSObject *)directObj withArguments: (QSObject *)indirectObj {
-    return [self executeScript:directObj withArguments:indirectObj inTab:YES inCurrent:NO];
-}
-
-/*
- Execute a script in the current terminal
- */
-- (QSObject *) executeScriptInCurrent:(QSObject *)directObj withArguments: (QSObject *)indirectObj {
-    return [self executeScript:directObj withArguments:indirectObj inTab:NO inCurrent:YES];
+    return [self executeText:directObj target:QSTerminalTargetCurrent];
 }
 
 
@@ -107,7 +77,7 @@
  out what binary should be used to execute the script, and calls that binary with
  the script as the argument, just like the hash bang would do.
  */
-- (QSObject *) executeScript:(QSObject *)directObj withArguments: (QSObject *)indirectObj inTab:(BOOL)inTab inCurrent:(BOOL)inCurrent {
+- (QSObject *) executeScript:(QSObject *)directObj withArguments:(QSObject *)indirectObj target:(QSTerminalTarget)target {
     NSString *script = [directObj singleFilePath];
     NSString *args = [indirectObj stringValue];
     NSString *executable = @"";
@@ -153,14 +123,41 @@
         command = [command stringByAppendingString:[NSString stringWithFormat:@" %@", args]];
     }
     
-    if (inTab) {
-        [terminalMediator performCommandInTerminalTab:command];
-    } else if (inCurrent) {
-        [terminalMediator performCommandInCurrentTerminal:command];
-    } else {
-        [terminalMediator performCommandInTerminal:command];
-    }
+    [terminalMediator performCommandInTerminal:command target:target];
     
+    return nil;
+}
+
+
+/*
+ Execute a script in a new terminal
+ */
+- (QSObject *) executeScriptInWindow:(QSObject *)directObj withArguments: (QSObject *)indirectObj {
+    return [self executeScript:directObj withArguments:indirectObj target:QSTerminalTargetWindow];
+}
+
+
+/*
+ Execute a script in a new terminal tab
+ */
+- (QSObject *) executeScriptInTab:(QSObject *)directObj withArguments: (QSObject *)indirectObj {
+    return [self executeScript:directObj withArguments:indirectObj target:QSTerminalTargetTab];
+}
+
+/*
+ Execute a script in the current terminal
+ */
+- (QSObject *) executeScriptInCurrent:(QSObject *)directObj withArguments: (QSObject *)indirectObj {
+    return [self executeScript:directObj withArguments:indirectObj target:QSTerminalTargetCurrent];
+}
+
+
+/*
+ Open directory
+ */
+- (QSObject *) openDir:(QSObject *)directObj target:(QSTerminalTarget)target {
+    NSString *path = [directObj singleFilePath];
+    [self openPath:path target:target];
     return nil;
 }
 
@@ -168,8 +165,8 @@
 /*
  Open directory in a new terminal
  */
-- (QSObject *) openDir:(QSObject *)directObj {
-    return [self openDir:directObj inTab:NO inCurrent:NO];
+- (QSObject *) openDirInWindow:(QSObject *)directObj {
+    return [self openDir:directObj target:QSTerminalTargetWindow];
 }
 
 
@@ -177,7 +174,7 @@
  Open directory in a new tab in the current terminal
  */
 - (QSObject *) openDirInTab:(QSObject *)directObj {
-    return [self openDir:directObj inTab:YES inCurrent:NO];
+    return [self openDir:directObj target:QSTerminalTargetTab];
 }
 
 
@@ -185,16 +182,23 @@
  Open directory in a new tab in the current terminal
  */
 - (QSObject *) openDirInCurrent:(QSObject *)directObj {
-    return [self openDir:directObj inTab:NO inCurrent:YES];
+    return [self openDir:directObj target:QSTerminalTargetCurrent];
 }
 
 
 /*
- Open directory
+ Open an object's parent in a new terminal
  */
-- (QSObject *) openDir:(QSObject *)directObj inTab:(BOOL)inTab inCurrent:(BOOL)inCurrent {
+- (QSObject *) openParent:(QSObject *)directObj target:(QSTerminalTarget)target {
     NSString *path = [directObj singleFilePath];
-    [self openPath:path inTab:inTab inCurrent:(BOOL)inCurrent];
+    NSArray *comps = [path pathComponents];
+    
+    if ([comps count] > 1) {
+        // Remove the file's name from the path
+        path = [NSString pathWithComponents:[comps subarrayWithRange:(NSRange){0, [comps count] - 1}]];
+    }
+    
+    [self openPath:path target:target];
     return nil;
 }
 
@@ -202,16 +206,16 @@
 /*
  Open an object's parent in a new terminal
  */
-- (QSObject *) openParent:(QSObject *)directObj {
-    return [self openParent:directObj inTab:NO inCurrent:NO];
+- (QSObject *) openParentInWindow:(QSObject *)directObj {
+    return [self openParent:directObj target:QSTerminalTargetWindow];
 }
 
 
 /*
- Open an object's parent in a new terminal
+ Open an object's parent in a new terminal tab
  */
 - (QSObject *) openParentInTab:(QSObject *)directObj {
-    return [self openParent:directObj inTab:YES inCurrent:NO];
+    return [self openParent:directObj target:QSTerminalTargetTab];
 }
 
 
@@ -219,40 +223,16 @@
  Open an object's parent the current terminal
  */
 - (QSObject *) openParentInCurrent:(QSObject *)directObj {
-    return [self openParent:directObj inTab:NO inCurrent:YES];
-}
-
-
-/*
- Open an object's parent in a new terminal
- */
-- (QSObject *) openParent:(QSObject *)directObj inTab:(BOOL)inTab inCurrent:(BOOL)inCurrent {
-    NSString *path = [directObj singleFilePath];
-    NSArray *comps = [path pathComponents];
-
-    if ([comps count] > 1) {
-        // Remove the file's name from the path
-        path = [NSString pathWithComponents:[comps subarrayWithRange:(NSRange){0, [comps count] - 1}]];
-    }
-
-    [self openPath:path inTab:inTab inCurrent:inCurrent];
-    return nil;
+    return [self openParent:directObj target:QSTerminalTargetCurrent];
 }
 
 
 /*
  Utility method for cd:ing to a given path in a new terminal window
  */
-- (void) openPath:(NSString *)path inTab:(BOOL)inTab inCurrent:(BOOL)inCurrent {
+- (void) openPath:(NSString *)path target:(QSTerminalTarget)target {
     NSString *command = [NSString stringWithFormat:@"cd %@", [self escapeString:path]];
-    
-    if (inTab) {
-        [terminalMediator performCommandInTerminalTab:command]; 
-    } else if (inCurrent) {
-        [terminalMediator performCommandInCurrentTerminal:command];
-    } else {
-        [terminalMediator performCommandInTerminal:command];
-    }
+    [terminalMediator performCommandInTerminal:command target:target];
 }
 
 
@@ -298,7 +278,7 @@
         }
         if (isDirectory) {
             return [NSArray arrayWithObjects:
-                    kQSiTerm2OpenDirAction,
+                    kQSiTerm2OpenDirInWindowAction,
                     kQSiTerm2OpenDirInTabAction,
                     kQSiTerm2OpenDirInCurrentAction,
                     nil];
@@ -327,7 +307,7 @@
             
             if (executable){
                 return [NSArray arrayWithObjects:
-                        kQSiTerm2ExecuteScriptAction,
+                        kQSiTerm2ExecuteScriptInWindowAction,
                         kQSiTerm2ExecuteScriptInTabAction,
                         kQSiTerm2ExecuteScriptInCurrentAction,
                         nil];
@@ -335,7 +315,7 @@
         }
         
         return [NSArray arrayWithObjects:
-                kQSiTerm2OpenParentAction,
+                kQSiTerm2OpenParentInWindowAction,
                 kQSiTerm2OpenParentInTabAction,
                 kQSiTerm2OpenParentInCurrentAction,
                 nil];

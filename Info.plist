@@ -24,12 +24,12 @@
 	<string>9</string>
 	<key>QSActions</key>
 	<dict>
-		<key>QSiTerm2ExecuteText</key>
+		<key>QSiTerm2ExecuteTextInWindow</key>
 		<dict>
 			<key>actionClass</key>
 			<string>QSiTerm2ActionProvider</string>
 			<key>actionSelector</key>
-			<string>executeText:</string>
+			<string>executeTextInWindow:</string>
 			<key>alternateAction</key>
 			<string>QSiTerm2ExecuteTextInTab</string>
 			<key>directTypes</key>
@@ -49,7 +49,7 @@
 			<key>actionSelector</key>
 			<string>executeTextInTab:</string>
 			<key>alternateAction</key>
-			<string>QSiTerm2ExecuteText</string>
+			<string>QSiTerm2ExecuteTextInWindow</string>
 			<key>directTypes</key>
 			<array>
 				<string>qs.shellcommand</string>
@@ -82,12 +82,12 @@
 			<key>enabled</key>
 			<false/>
 		</dict>
-		<key>QSiTerm2ExecuteScript</key>
+		<key>QSiTerm2ExecuteScriptInWindow</key>
 		<dict>
 			<key>actionClass</key>
 			<string>QSiTerm2ActionProvider</string>
 			<key>actionSelector</key>
-			<string>executeScript:withArguments:</string>
+			<string>executeScriptInWindow:withArguments:</string>
 			<key>alternateAction</key>
 			<string>QSiTerm2ExecuteScriptInTab</string>
 			<key>directTypes</key>
@@ -121,7 +121,7 @@
 			<key>actionSelector</key>
 			<string>executeScriptInTab:withArguments:</string>
 			<key>alternateAction</key>
-			<string>QSiTerm2ExecuteScript</string>
+			<string>QSiTerm2ExecuteScriptInWindow</string>
 			<key>directTypes</key>
 			<array>
 				<string>NSFilenamesPboardType</string>
@@ -182,12 +182,12 @@
 			<key>enabled</key>
 			<false/>
 		</dict>
-		<key>QSiTerm2OpenDir</key>
+		<key>QSiTerm2OpenDirInWindow</key>
 		<dict>
 			<key>actionClass</key>
 			<string>QSiTerm2ActionProvider</string>
 			<key>actionSelector</key>
-			<string>openDir:</string>
+			<string>openDirInWindow:</string>
 			<key>alternateAction</key>
 			<string>QSiTerm2OpenDirInTab</string>
 			<key>directTypes</key>
@@ -208,7 +208,7 @@
 			<key>actionSelector</key>
 			<string>openDirInTab:</string>
 			<key>alternateAction</key>
-			<string>QSiTerm2OpenDir</string>
+			<string>QSiTerm2OpenDirInWindow</string>
 			<key>directTypes</key>
 			<array>
 				<string>NSFilenamesPboardType</string>
@@ -243,12 +243,12 @@
 			<key>enabled</key>
 			<false/>
 		</dict>
-		<key>QSiTerm2OpenParent</key>
+		<key>QSiTerm2OpenParentInWindow</key>
 		<dict>
 			<key>actionClass</key>
 			<string>QSiTerm2ActionProvider</string>
 			<key>actionSelector</key>
-			<string>openParent:</string>
+			<string>openParentInWindow:</string>
 			<key>alternateAction</key>
 			<string>QSiTerm2OpenParentInTab</string>
 			<key>directTypes</key>
@@ -269,7 +269,7 @@
 			<key>actionSelector</key>
 			<string>openParentInTab:</string>
 			<key>alternateAction</key>
-			<string>QSiTerm2OpenParent</string>
+			<string>QSiTerm2OpenParentInWindow</string>
 			<key>directTypes</key>
 			<array>
 				<string>NSFilenamesPboardType</string>
@@ -291,8 +291,6 @@
 			<string>QSiTerm2ActionProvider</string>
 			<key>actionSelector</key>
 			<string>openParentInCurrent:</string>
-			<key>alternateAction</key>
-			<string>QSiTerm2OpenParent</string>
 			<key>directTypes</key>
 			<array>
 				<string>NSFilenamesPboardType</string>
