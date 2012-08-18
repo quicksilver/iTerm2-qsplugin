@@ -41,6 +41,8 @@
 			<string>com.googlecode.iterm2</string>
 			<key>name</key>
 			<string>Run a Text Command in iTerm</string>
+			<key>description</key>
+			<string>In a new terminal window</string>
 		</dict>
 		<key>QSiTerm2ExecuteTextInTab</key>
 		<dict>
@@ -111,6 +113,8 @@
 			<true/>
 			<key>name</key>
 			<string>Run in iTerm [...]</string>
+			<key>description</key>
+			<string>In a new terminal window</string>
 			<key>validatesObjects</key>
 			<true/>
 		</dict>
@@ -198,6 +202,8 @@
 			<string>com.googlecode.iterm2</string>
 			<key>name</key>
 			<string>Open Directory in iTerm</string>
+			<key>description</key>
+			<string>In a new terminal window</string>
 			<key>validatesObjects</key>
 			<true/>
 		</dict>
@@ -259,6 +265,8 @@
 			<string>com.googlecode.iterm2</string>
 			<key>name</key>
 			<string>Open Parent Directory in iTerm</string>
+			<key>description</key>
+			<string>In a new terminal window</string>
 			<key>validatesObjects</key>
 			<true/>
 		</dict>
@@ -365,16 +373,23 @@
 &lt;p&gt;This plugin supplies the following actions:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Run a Text Command in iTerm&lt;/strong&gt; - Runs a text command entered in Quicksilver&apos;s text mode in iTerm.&lt;/p&gt;
-&lt;p&gt;The action opens a new terminal. The alternate action is &lt;strong&gt;Run a Text Command in iTerm Tab&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Disabled by default.&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;The action opens a new terminal. The alternate action is &lt;strong&gt;Run a Text Command in iTerm Tab&lt;/strong&gt;.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Run a Text Command in iTerm Tab&lt;/strong&gt; - Runs a text command entered in Quicksilver&apos;s text mode in iTerm.&lt;/p&gt;
-&lt;p&gt;The action opens a new tab in the current terminal. The alternate action is &lt;strong&gt;Run a Text Command in iTerm&lt;/strong&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;The action opens a new tab in the current terminal. The alternate action is &lt;strong&gt;Run a Text Command in iTerm&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Disabled by default.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Run a Text Command in Current iTerm&lt;/strong&gt; - Runs a text command entered in Quicksilver&apos;s text mode in iTerm.&lt;/p&gt;
+&lt;p&gt;The action runs the command in the frontmost tab in the frontmost iTerm window.&lt;/p&gt;
+&lt;p&gt;Disabled by default.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Run in iTerm [...]&lt;/strong&gt; - Runs the selected shell script/binary in iTerm.&lt;/p&gt;
 &lt;p&gt;The target either has to be an executable or a shell script with a #! declaration.&lt;/p&gt;
 &lt;p&gt;The action opens a new terminal. The alternate action is &lt;strong&gt;Run in iTerm Tab [...]&lt;/strong&gt;.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Run in iTerm Tab [...]&lt;/strong&gt; - Runs the selected shell script/binary in iTerm.&lt;/p&gt;
 &lt;p&gt;The target either has to be an executable or a shell script with a #! declaration.&lt;/p&gt;
 &lt;p&gt;The action opens a new tab in the current terminal. The alternate action is &lt;strong&gt;Run in iTerm [...]&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Disabled by default.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Run in Current iTerm [...]&lt;/strong&gt; - Runs the selected shell script/binary in iTerm.&lt;/p&gt;
+&lt;p&gt;The target either has to be an executable or a shell script with a #! declaration.&lt;/p&gt;
+&lt;p&gt;The action runs the command in the frontmost tab in the frontmost iTerm window.&lt;/p&gt;
 &lt;p&gt;Disabled by default.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Open Parent Directory in iTerm&lt;/strong&gt; - Opens the selected directory&apos;s parent in iTerm.&lt;/p&gt;
 &lt;p&gt;This action is only provided for targets that are neither directories nor runnables (Terminal plugin compatibility).&lt;/p&gt;
@@ -383,10 +398,17 @@
 &lt;p&gt;This action is only provided for targets that are neither directories nor runnables (Terminal plugin compatibility).&lt;/p&gt;
 &lt;p&gt;The action opens a new tab in the current terminal. The alternate action is &lt;strong&gt;Open Parent Directory in iTerm&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Disabled by default.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Open Parent Directory in Current iTerm&lt;/strong&gt; - Opens the selected directory&apos;s parent in iTerm.&lt;/p&gt;
+&lt;p&gt;This action is only provided for targets that are neither directories nor runnables (Terminal plugin compatibility).&lt;/p&gt;
+&lt;p&gt;The action opens the directory in the frontmost tab in the frontmost iTerm window.&lt;/p&gt;
+&lt;p&gt;Disabled by default.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Open Directory in iTerm&lt;/strong&gt; - Opens the selected directory in iTerm.&lt;/p&gt;
 &lt;p&gt;The action opens a new terminal. The alternate action is &lt;strong&gt;Open Directory in iTerm Tab&lt;/strong&gt;.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Open Directory in iTerm&lt;/strong&gt; - Opens the selected directory in iTerm.&lt;/p&gt;
 &lt;p&gt;The action opens a new tab in the current terminal. The alternate action is &lt;strong&gt;Open Directory in iTerm&lt;/strong&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Open Directory in Current iTerm&lt;/strong&gt; - Opens the selected directory&apos;s parent in iTerm.&lt;/p&gt;
+&lt;p&gt;The action opens the directory in the frontmost tab in the frontmost iTerm window.&lt;/p&gt;
+&lt;p&gt;Disabled by default.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;When configured as the Command Line Interface for Quicksilver, this plugin also supports the following actions:&lt;/p&gt;
 &lt;ul&gt;
@@ -399,7 +421,8 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Open in New Window&lt;/strong&gt; - Opens a new terminal window with the selected session&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Open in New Tab&lt;/strong&gt; - Opens a new tab with the selected session in the current terminal&lt;/li&gt;
-&lt;/ul&gt;</string>
+&lt;/ul&gt;
+</string>
 		<key>icon</key>
 		<string>com.googlecode.iterm2</string>
 		<key>relatedBundles</key>
