@@ -37,3 +37,9 @@
 // Bytes read in unknown files
 #define kQSiTerm2UnknownBufSize 5
 
+// Target enum
+typedef enum {
+    QSTerminalTargetCurrent,
+    QSTerminalTargetWindow,
+    QSTerminalTargetTab
+} QSTerminalTarget;

@@ -262,7 +262,7 @@
 - (QSObject *) openSessionWindow:(QSObject *)directObj {
     if ([directObj containsType:kQSiTerm2SessionType]) {
         NSString *sessionName = [directObj objectForType:kQSiTerm2SessionType];
-        [terminalMediator openSession:sessionName inTab:NO];
+        [terminalMediator openSession:sessionName target:QSTerminalTargetWindow];
     }
     return nil;
 }
@@ -274,7 +274,7 @@
 - (QSObject *) openSessionTab:(QSObject *)directObj {
     if ([directObj containsType:kQSiTerm2SessionType]) {
         NSString *sessionName = [directObj objectForType:kQSiTerm2SessionType];
-        [terminalMediator openSession:sessionName inTab:YES];
+        [terminalMediator openSession:sessionName target:QSTerminalTargetTab];
     }
     return nil;
 }

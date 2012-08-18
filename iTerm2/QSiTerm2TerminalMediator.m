@@ -12,15 +12,34 @@
 
 
 /*
- Creates a new terminal window
+ Executes a command in a terminal. Where the command is run is defined by the target argument.
  */
-- (iTermTerminal *) createTerminal {
+- (void) performCommandInTerminal:(NSString *)command target:(QSTerminalTarget)target {
+    // iTerm2 does not run the command if there are trailing spaces in the command
+    NSString *trimmedCommand = [command stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    
     iTermITermApplication *app = [SBApplication applicationWithBundleIdentifier:kQSiTerm2Bundle];
+    iTermTerminal *terminal;
+    iTermSession *session;
     
-    iTermTerminal *terminal = [[[app classForScriptingClass:@"terminal"] alloc] init];
-    [[app terminals] addObject:terminal];
+    // Get terminal window
+    if (target == QSTerminalTargetWindow || app.terminals.count <= 0) {
+        terminal = [self createTerminalIn:app];
+    } else {
+        terminal = app.currentTerminal;
+    }
     
-    return [terminal autorelease];
+    // Get terminal session
+    if (target == QSTerminalTargetCurrent) {
+        session = app.currentTerminal.currentSession;
+    } else {
+        session = [terminal launchSession:kQSiTerm2StandardSession];
+    }
+    
+    [app activate];
+
+    // execCommand does not work, this does, don't know why...
+    [session writeContentsOfFile:nil text:trimmedCommand];
 }
 
 
@@ -30,14 +49,14 @@
  This method is required for this object to become a global terminal mediator in QS.
  */
 - (void) performCommandInTerminal:(NSString *)command {
-    // iTerm2 does not run the command if there are trailing spaces in the command
-    NSString *trimmedCommand = [command stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    
-    iTermTerminal *terminal = [self createTerminal];
-    
-    iTermSession *session = [terminal launchSession:kQSiTerm2StandardSession];
-    // execCommand does not work, this does, don't know why...
-    [session writeContentsOfFile:nil text:trimmedCommand];
+    [self performCommandInTerminalWindow:command];
+}
+
+/*
+ Executes a command in a new terminal window
+ */
+- (void) performCommandInTerminalWindow:(NSString *)command {
+    [self performCommandInTerminal:command target:QSTerminalTargetWindow];
 }
 
 
@@ -45,48 +64,38 @@
  Executes a command in a new tab in the current terminal
  */
 - (void) performCommandInTerminalTab:(NSString *)command {
-    // iTerm2 does not run the command if there are trailing spaces in the command
-    NSString *trimmedCommand = [command stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    
-    iTermITermApplication *app = [SBApplication applicationWithBundleIdentifier:kQSiTerm2Bundle];
-    iTermTerminal *terminal;
-    
-    if ([[app terminals] count] > 0) {
-        terminal = app.currentTerminal;
-    } else {
-        terminal = [self createTerminal];
-    }
-    
-    iTermSession *session = [terminal launchSession:kQSiTerm2StandardSession];
-    // execCommand does not work, this does, don't know why...
-    [session writeContentsOfFile:nil text:trimmedCommand];
+    [self performCommandInTerminal:command target:QSTerminalTargetTab];
 }
+
 
 /*
  Executes a command in the current terminal
  */
 - (void) performCommandInCurrentTerminal: (NSString *)command {
-    // iTerm2 does not run the command if there are trailing spaces in the command
-    NSString *trimmedCommand = [command stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    [self performCommandInTerminal:command target:QSTerminalTargetCurrent];
+}
+
+
+/*
+ Creates a new terminal window
+ */
+- (iTermTerminal *) createTerminalIn:(iTermITermApplication *)app {
+    iTermTerminal *terminal = [[[app classForScriptingClass:@"terminal"] alloc] init];
+    [[app terminals] addObject:terminal];
     
-    iTermITermApplication *app = [SBApplication applicationWithBundleIdentifier:kQSiTerm2Bundle];
-    
-    [app activate];
-    
-    // execCommand does not work, this does, don't know why...
-    [app.currentTerminal.currentSession writeContentsOfFile:nil text:trimmedCommand];
+    return [terminal autorelease];
 }
 
 /*
  Open a named session in a new terminal window
  */
-- (void) openSession:(NSString *)sessionName inTab:(BOOL)inTab {
+- (void) openSession:(NSString *)sessionName target:(QSTerminalTarget)target {
     iTermITermApplication *app = [SBApplication applicationWithBundleIdentifier:kQSiTerm2Bundle];
-
-    if (inTab && [[app terminals] count] > 0) {
+    
+    if (target == QSTerminalTargetTab && [[app terminals] count] > 0) {
         [app.currentTerminal launchSession:sessionName];
     } else {
-        iTermTerminal *terminal = [self createTerminal];
+        iTermTerminal *terminal = [self createTerminalIn:app];
         [terminal launchSession:sessionName];
     }
 }
