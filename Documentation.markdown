@@ -98,7 +98,7 @@ This plugin supplies the following actions:
     The action opens a new terminal. The alternate action is **Open Directory
     in iTerm Tab**.
 
- * **Open Directory in iTerm** - Opens the selected directory in iTerm.
+ * **Open Directory in iTerm Tab** - Opens the selected directory in a new tab in iTerm.
 
     The action opens a new tab in the current terminal. The alternate action is
     **Open Directory in iTerm**.
