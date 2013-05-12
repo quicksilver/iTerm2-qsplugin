@@ -21,6 +21,9 @@ plugin](http://github.com/quicksilver/Terminal-qsplugin).
 
 This plugin supplies the following actions:
 
+ * **Open New Window** - Opens a new iTerm window. This action is available
+   directly on the iTerm2 application in QS.
+
  * **Run a Text Command in iTerm** - Runs a text command entered in Quicksilver's text mode in iTerm.
 
     The action opens a new terminal. The alternate action is **Run a Text

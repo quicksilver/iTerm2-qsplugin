@@ -259,6 +259,14 @@
     return nil;
 }
 
+/*
+ Open a new iTerm window
+ */
+- (QSObject *) openNewWindow:(QSObject *)directObj {
+    [terminalMediator openSession:kQSiTerm2StandardSession target:QSTerminalTargetWindow];
+    return nil;
+}
+
 
 /*
  Checks if the object is a valid target for our commands.
