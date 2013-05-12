@@ -36,7 +36,7 @@
             
             sessionObj = [QSObject objectWithName:sessionName];
             
-            [sessionObj setDetails:[NSString stringWithFormat:@"iTerm Session", sessionName]];
+            [sessionObj setDetails:@"iTerm Session"];
             [sessionObj setPrimaryType:kQSiTerm2SessionType];
             [sessionObj setObject:sessionName forType:kQSiTerm2SessionType];
             [sessionObj setIcon:icon];
