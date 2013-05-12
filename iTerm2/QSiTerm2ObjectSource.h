@@ -7,6 +7,7 @@
 //
 
 #import "QSiTerm2Definitions.h"
+#import "QSiTerm2Utils.h"
 
 @interface QSiTerm2ObjectSource : QSObjectSource
 

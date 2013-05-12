@@ -263,7 +263,7 @@
  Open a new iTerm window
  */
 - (QSObject *) openNewWindow:(QSObject *)directObj {
-    [terminalMediator openSession:kQSiTerm2StandardSession target:QSTerminalTargetWindow];
+    [terminalMediator openSession:[QSiTerm2Utils defaultSessionName] target:QSTerminalTargetWindow];
     return nil;
 }
 

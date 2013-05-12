@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E121CA64173FF02E004AEF53 /* QSiTerm2Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = E121CA63173FF02E004AEF53 /* QSiTerm2Utils.m */; };
 		E188D3F31520F03700176E28 /* iTerm.app in Resources */ = {isa = PBXBuildFile; fileRef = E188D3F21520F03700176E28 /* iTerm.app */; };
 		E188D3F51520F09A00176E28 /* iTerm.app in Sources */ = {isa = PBXBuildFile; fileRef = E188D3F21520F03700176E28 /* iTerm.app */; };
 		E1CFAC71151E6E5D005721A7 /* QSiTerm2ActionProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CFAC70151E6E5D005721A7 /* QSiTerm2ActionProvider.m */; };
@@ -31,6 +32,8 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
+		E121CA62173FF02E004AEF53 /* QSiTerm2Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSiTerm2Utils.h; sourceTree = "<group>"; };
+		E121CA63173FF02E004AEF53 /* QSiTerm2Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSiTerm2Utils.m; sourceTree = "<group>"; };
 		E188D3F21520F03700176E28 /* iTerm.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = iTerm.app; path = /Applications/iTerm.app; sourceTree = "<absolute>"; };
 		E1CFAC6F151E6E5D005721A7 /* QSiTerm2ActionProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSiTerm2ActionProvider.h; sourceTree = "<group>"; };
 		E1CFAC70151E6E5D005721A7 /* QSiTerm2ActionProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSiTerm2ActionProvider.m; sourceTree = "<group>"; };
@@ -101,6 +104,8 @@
 				E1D1658215220B63004837CC /* QSiTerm2ObjectSource.m */,
 				E1E4B5201518E6F70063F299 /* QSiTerm2TerminalMediator.h */,
 				E1E4B5211518E6F70063F299 /* QSiTerm2TerminalMediator.m */,
+				E121CA62173FF02E004AEF53 /* QSiTerm2Utils.h */,
+				E121CA63173FF02E004AEF53 /* QSiTerm2Utils.m */,
 			);
 			path = iTerm2;
 			sourceTree = "<group>";
@@ -214,6 +219,7 @@
 				E1E4B5221518E6F70063F299 /* QSiTerm2TerminalMediator.m in Sources */,
 				E1CFAC71151E6E5D005721A7 /* QSiTerm2ActionProvider.m in Sources */,
 				E1D1658315220B63004837CC /* QSiTerm2ObjectSource.m in Sources */,
+				E121CA64173FF02E004AEF53 /* QSiTerm2Utils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

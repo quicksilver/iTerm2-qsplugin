@@ -7,6 +7,7 @@
 //
 
 #import "QSiTerm2Definitions.h"
+#import "QSiTerm2Utils.h"
 #import "iTerm.h"
 
 // Quicksilver terminal mediator interface

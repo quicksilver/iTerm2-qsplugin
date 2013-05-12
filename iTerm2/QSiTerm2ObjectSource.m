@@ -22,17 +22,12 @@
         
         NSMutableArray *children = [NSMutableArray arrayWithCapacity:1];
         
-        NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:[kQSiTerm2SettingsFile stringByStandardizingPath]];
-        
-        NSEnumerator *sessionEnum = [[dict objectForKey:kQSiTerm2SessionSettingsKey] objectEnumerator];
-        NSDictionary *session;
         QSObject *sessionObj;
         
         id icon = [QSResourceManager imageNamed:kQSiTerm2Bundle];
         
         // Generate a child object for each of the sessions
-        while (session = [sessionEnum nextObject]) {
-            NSString *sessionName = [session objectForKey:@"Name"];
+        for (NSString *sessionName in [QSiTerm2Utils sessions]) {
             
             sessionObj = [QSObject objectWithName:sessionName];
             

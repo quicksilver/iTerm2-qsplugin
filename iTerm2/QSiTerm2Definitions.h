@@ -30,11 +30,9 @@
 
 // iTerm2 settings
 #define kQSiTerm2Bundle @"com.googlecode.iterm2"
-#define kQSiTerm2SettingsFile @"~/Library/Preferences/com.googlecode.iterm2.plist"
-#define kQSiTerm2SessionSettingsKey @"New Bookmarks" // Sessions are stored under this key...
 
-// The session to use unless otherwise specified
-#define kQSiTerm2StandardSession @"Default"
+// The session name to use when no default session can be found
+#define kQSiTerm2FallbackSession @"Default"
 
 // Bytes read in unknown files
 #define kQSiTerm2UnknownBufSize 5

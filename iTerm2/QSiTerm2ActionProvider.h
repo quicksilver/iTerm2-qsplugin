@@ -8,6 +8,7 @@
 
 #import "QSiTerm2Definitions.h"
 #import "QSiTerm2TerminalMediator.h"
+#import "QSiTerm2Utils.h"
 
 #define QSShellCommandType @"qs.shellcommand"
 

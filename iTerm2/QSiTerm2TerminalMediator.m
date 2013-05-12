@@ -33,7 +33,7 @@
     if (target == QSTerminalTargetCurrent) {
         session = app.currentTerminal.currentSession;
     } else {
-        session = [terminal launchSession:kQSiTerm2StandardSession];
+        session = [terminal launchSession:[QSiTerm2Utils defaultSessionName]];
     }
     
     [app activate];
