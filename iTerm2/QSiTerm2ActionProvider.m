@@ -291,8 +291,10 @@
                     kQSiTerm2OpenDirInCurrentAction,
                     nil];
         }
+
+        CFStringRef uti = (CFStringRef)[directObj fileUTI];
         
-        if ([QSShellScriptTypes containsObject:[[NSFileManager defaultManager] typeOfFile:path]]) {
+        if (UTTypeConformsTo(uti, (CFStringRef)@"public.script") || UTTypeConformsTo(uti, (CFStringRef)@"public.executable")) {
             BOOL executable = [[NSFileManager defaultManager] isExecutableFileAtPath:path];
             
             if (!executable) {

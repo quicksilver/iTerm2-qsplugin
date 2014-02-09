@@ -9,9 +9,6 @@
 // Special shell characters
 #define QSShellEscape @"\\!$&\"'*(){[|;<>?~` "
 
-// File types classified as scripts
-#define QSShellScriptTypes [NSArray arrayWithObjects: @"sh", @"pl", @"command", @"php", @"py", @"'TEXT'", @"rb", @"", nil]
-
 // Action constants, matches those in Info.plist
 #define kQSiTerm2ExecuteScriptInWindowAction @"QSiTerm2ExecuteScriptInWindow"
 #define kQSiTerm2OpenDirInWindowAction @"QSiTerm2OpenDirInWindow"
