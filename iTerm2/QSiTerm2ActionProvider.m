@@ -272,7 +272,7 @@
  Checks if the object is a valid target for our commands.
  */
 - (NSArray *) validActionsForDirectObject:(QSObject *)directObj indirectObject:(QSObject *)indirectObj {
-    if ([directObj objectForType:NSFilenamesPboardType])  {
+    if ([directObj objectForType:QSFilePathType])  {
         NSString *path = [directObj singleFilePath];
 
         if (!path) {

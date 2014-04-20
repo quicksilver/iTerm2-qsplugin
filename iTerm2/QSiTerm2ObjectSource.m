@@ -18,7 +18,7 @@
  */
 - (BOOL) loadChildrenForObject:(QSObject *)object {
     
-    if ([[object primaryType] isEqualToString:NSFilenamesPboardType]) {
+    if ([[object primaryType] isEqualToString:QSFilePathType]) {
         
         NSMutableArray *children = [NSMutableArray arrayWithCapacity:1];
         
