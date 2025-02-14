@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD7B3E472D60066D008B8715 /* QSFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD7B3E462D60066D008B8715 /* QSFoundation.framework */; };
+		CD7B3E492D600677008B8715 /* QSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD7B3E482D600677008B8715 /* QSCore.framework */; };
 		E121CA64173FF02E004AEF53 /* QSiTerm2Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = E121CA63173FF02E004AEF53 /* QSiTerm2Utils.m */; };
 		E188D3F31520F03700176E28 /* iTerm.app in Resources */ = {isa = PBXBuildFile; fileRef = E188D3F21520F03700176E28 /* iTerm.app */; };
-		E188D3F51520F09A00176E28 /* iTerm.app in Sources */ = {isa = PBXBuildFile; fileRef = E188D3F21520F03700176E28 /* iTerm.app */; };
 		E1CFAC71151E6E5D005721A7 /* QSiTerm2ActionProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CFAC70151E6E5D005721A7 /* QSiTerm2ActionProvider.m */; };
 		E1D1658315220B63004837CC /* QSiTerm2ObjectSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D1658215220B63004837CC /* QSiTerm2ObjectSource.m */; };
 		E1E4B4FE1518E4D00063F299 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E4B4FD1518E4D00063F299 /* Cocoa.framework */; };
@@ -23,6 +24,8 @@
 			compilerSpec = com.apple.compilers.proxy.script;
 			filePatterns = "*.app";
 			fileType = pattern.proxy;
+			inputFiles = (
+			);
 			isEditable = 1;
 			outputFiles = (
 				"$(DERIVED_FILES_DIR)/$(INPUT_FILE_BASE).h",
@@ -32,6 +35,9 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
+		CD7B3E462D60066D008B8715 /* QSFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QSFoundation.framework; path = ../../../../../private/tmp/QS/build/Debug/QSFoundation.framework; sourceTree = "<group>"; };
+		CD7B3E482D600677008B8715 /* QSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QSCore.framework; path = ../../../../../private/tmp/QS/build/Debug/QSCore.framework; sourceTree = "<group>"; };
+		CD7B3E4C2D600752008B8715 /* iTerm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iTerm.h; sourceTree = "<group>"; };
 		E121CA62173FF02E004AEF53 /* QSiTerm2Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSiTerm2Utils.h; sourceTree = "<group>"; };
 		E121CA63173FF02E004AEF53 /* QSiTerm2Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSiTerm2Utils.m; sourceTree = "<group>"; };
 		E188D3F21520F03700176E28 /* iTerm.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = iTerm.app; path = /Applications/iTerm.app; sourceTree = "<absolute>"; };
@@ -60,6 +66,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1E4B4FE1518E4D00063F299 /* Cocoa.framework in Frameworks */,
+				CD7B3E472D60066D008B8715 /* QSFoundation.framework in Frameworks */,
+				CD7B3E492D600677008B8715 /* QSCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +95,8 @@
 		E1E4B4FC1518E4D00063F299 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CD7B3E482D600677008B8715 /* QSCore.framework */,
+				CD7B3E462D60066D008B8715 /* QSFoundation.framework */,
 				E1E4B4FD1518E4D00063F299 /* Cocoa.framework */,
 			);
 			name = Frameworks;
@@ -98,6 +108,7 @@
 				E1E4B5051518E4D00063F299 /* Configuration */,
 				E1E4B5001518E4D00063F299 /* Supporting Files */,
 				E1CFAC6F151E6E5D005721A7 /* QSiTerm2ActionProvider.h */,
+				CD7B3E4C2D600752008B8715 /* iTerm.h */,
 				E1CFAC70151E6E5D005721A7 /* QSiTerm2ActionProvider.m */,
 				E1D165881524BD17004837CC /* QSiTerm2Definitions.h */,
 				E1D1658115220B63004837CC /* QSiTerm2ObjectSource.h */,
@@ -163,12 +174,18 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = stdin.se;
+				TargetAttributes = {
+					E1E4B4F91518E4D00063F299 = {
+						ProvisioningStyle = Manual;
+					};
+				};
 			};
 			buildConfigurationList = E1E4B4F31518E4D00063F299 /* Build configuration list for PBXProject "iTerm2" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = E1E4B4EE1518E4D00063F299;
@@ -215,7 +232,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E188D3F51520F09A00176E28 /* iTerm.app in Sources */,
 				E1E4B5221518E6F70063F299 /* QSiTerm2TerminalMediator.m in Sources */,
 				E1CFAC71151E6E5D005721A7 /* QSiTerm2ActionProvider.m in Sources */,
 				E1D1658315220B63004837CC /* QSiTerm2ObjectSource.m in Sources */,

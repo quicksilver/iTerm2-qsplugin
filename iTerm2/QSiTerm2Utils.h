@@ -7,6 +7,7 @@
 //
 
 #import "QSiTerm2Definitions.h"
+#import "iTerm.h"
 
 @interface QSiTerm2Utils : NSObject
 

@@ -43,19 +43,20 @@
  All sessions in iTerm2 as an array of strings
  */
 + (NSArray *) sessions {
-    NSDictionary *iTermPreferences = [[[NSUserDefaults alloc] init] persistentDomainForName:kQSiTerm2Bundle];
-    
-    NSMutableArray *sessionNames = [NSMutableArray arrayWithCapacity:1];
-    
-    NSArray *sessions = [iTermPreferences objectForKey:@"New Bookmarks"];
-    
-    if (sessions) {
-        for (NSDictionary *session in sessions) {
-            [sessionNames addObject:[session objectForKey:@"Name"]];
-        }
-    }
-    
-    return sessionNames;
+	iTermApplication *app = [SBApplication applicationWithBundleIdentifier:kQSiTerm2Bundle];
+	NSArray *windows = app.windows;
+	NSMutableArray *sessionObjects = [NSMutableArray arrayWithCapacity:1];
+
+	for (iTermWindow *window in windows) {
+		NSArray *tabs = window.tabs;
+		for (iTermTab *tab in tabs) {
+			NSArray *sessions = tab.sessions;
+			for (iTermSession *session in sessions) {
+				[sessionObjects addObject:[session name]];
+			}
+		}
+	}
+	return sessionObjects;
 }
 
 @end

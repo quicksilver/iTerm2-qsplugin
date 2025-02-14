@@ -18,28 +18,26 @@
     // iTerm2 does not run the command if there are trailing spaces in the command
     NSString *trimmedCommand = [command stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     
-    iTermITermApplication *app = [SBApplication applicationWithBundleIdentifier:kQSiTerm2Bundle];
-    iTermTerminal *terminal;
-    iTermSession *session;
+	iTermApplication *app = [SBApplication applicationWithBundleIdentifier:kQSiTerm2Bundle];
+	iTermWindow *terminal;
+	iTermTab *tab;
     
     // Get terminal window
-    if (target == QSTerminalTargetWindow || app.terminals.count <= 0) {
+    if (target == QSTerminalTargetWindow || app.windows.count <= 0) {
         terminal = [self createTerminalIn:app];
     } else {
-        terminal = app.currentTerminal;
+		terminal = app.currentWindow;
     }
     
     // Get terminal session
     if (target == QSTerminalTargetCurrent) {
-        session = app.currentTerminal.currentSession;
+		tab = app.currentWindow.currentTab;
+		[tab writeContentsOfFile:nil text:trimmedCommand newline:YES];
     } else {
-        session = [terminal launchSession:[QSiTerm2Utils defaultSessionName]];
+        [terminal createTabWithDefaultProfileCommand:trimmedCommand];
     }
     
     [app activate];
-
-    // execCommand does not work, this does, don't know why...
-    [session writeContentsOfFile:nil text:trimmedCommand];
 }
 
 
@@ -79,24 +77,20 @@
 /*
  Creates a new terminal window
  */
-- (iTermTerminal *) createTerminalIn:(iTermITermApplication *)app {
-    iTermTerminal *terminal = [[[app classForScriptingClass:@"terminal"] alloc] init];
-    [[app terminals] addObject:terminal];
-    
-    return [terminal autorelease];
+- (iTermWindow *)createTerminalIn:(iTermApplication *)app {
+	return [app createWindowWithDefaultProfileCommand:@""];
 }
 
 /*
  Open a named session in a new terminal window
  */
 - (void) openSession:(NSString *)sessionName target:(QSTerminalTarget)target {
-    iTermITermApplication *app = [SBApplication applicationWithBundleIdentifier:kQSiTerm2Bundle];
+	iTermApplication *app = [SBApplication applicationWithBundleIdentifier:kQSiTerm2Bundle];
     
-    if (target == QSTerminalTargetTab && [[app terminals] count] > 0) {
-        [app.currentTerminal launchSession:sessionName];
+    if (target == QSTerminalTargetTab && [app.windows count] > 0) {
+		[app.currentWindow createTabWithProfile:sessionName command:nil];
     } else {
-        iTermTerminal *terminal = [self createTerminalIn:app];
-        [terminal launchSession:sessionName];
+		[app createWindowWithProfile:sessionName command:nil];
     }
 }
 
