@@ -18,22 +18,6 @@
 		E1E4B5221518E6F70063F299 /* QSiTerm2TerminalMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E4B5211518E6F70063F299 /* QSiTerm2TerminalMediator.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXBuildRule section */
-		E188D3F61520F0E100176E28 /* PBXBuildRule */ = {
-			isa = PBXBuildRule;
-			compilerSpec = com.apple.compilers.proxy.script;
-			filePatterns = "*.app";
-			fileType = pattern.proxy;
-			inputFiles = (
-			);
-			isEditable = 1;
-			outputFiles = (
-				"$(DERIVED_FILES_DIR)/$(INPUT_FILE_BASE).h",
-			);
-			script = "if [[ -z \"${GITHUB_ACTIONS}\" ]]; then\nsdef \"$INPUT_FILE_PATH\" | sdp -fh -o \"$DERIVED_FILES_DIR\" --basename \"$INPUT_FILE_BASE\" --bundleid `defaults read \"$INPUT_FILE_PATH/Contents/Info\" CFBundleIdentifier`\nfi\n";
-		};
-/* End PBXBuildRule section */
-
 /* Begin PBXFileReference section */
 		CD7B3E462D60066D008B8715 /* QSFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QSFoundation.framework; path = ../../../../../private/tmp/QS/build/Debug/QSFoundation.framework; sourceTree = "<group>"; };
 		CD7B3E482D600677008B8715 /* QSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QSCore.framework; path = ../../../../../private/tmp/QS/build/Debug/QSCore.framework; sourceTree = "<group>"; };
@@ -151,13 +135,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E1E4B5191518E4D00063F299 /* Build configuration list for PBXNativeTarget "iTerm2" */;
 			buildPhases = (
+				CD74C78E2DF5E98800C548DE /* ShellScript */,
 				E1E4B4F81518E4D00063F299 /* Update version and documentation */,
 				E1E4B4F51518E4D00063F299 /* Sources */,
 				E1E4B4F61518E4D00063F299 /* Frameworks */,
 				E1E4B4F71518E4D00063F299 /* Resources */,
 			);
 			buildRules = (
-				E188D3F61520F0E100176E28 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -211,6 +195,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		CD74C78E2DF5E98800C548DE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				/Applications/iTerm.app,
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/iTerm2/iTerm.h",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "INPUT_FILE_PATH=\"/Applications/iTerm.app\"\nif [[ -z \"${GITHUB_ACTIONS}\" ]]; then\nsdef \"$INPUT_FILE_PATH\" | sdp -fh -o \"$DERIVED_FILES_DIR\" --basename \"iTerm\" --bundleid `defaults read \"$INPUT_FILE_PATH/Contents/Info\" CFBundleIdentifier` -o iTerm2\nfi\n";
+		};
 		E1E4B4F81518E4D00063F299 /* Update version and documentation */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

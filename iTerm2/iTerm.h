@@ -48,6 +48,7 @@ typedef enum iTermSaveOptions iTermSaveOptions;
 
 // The application's top-level scripting object.
 @interface iTermApplication : SBApplication
++ (iTermApplication *) application;
 
 - (SBElementArray<iTermWindow *> *) windows;
 
