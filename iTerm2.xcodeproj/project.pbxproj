@@ -10,7 +10,6 @@
 		CD7B3E472D60066D008B8715 /* QSFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD7B3E462D60066D008B8715 /* QSFoundation.framework */; };
 		CD7B3E492D600677008B8715 /* QSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD7B3E482D600677008B8715 /* QSCore.framework */; };
 		E121CA64173FF02E004AEF53 /* QSiTerm2Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = E121CA63173FF02E004AEF53 /* QSiTerm2Utils.m */; };
-		E188D3F31520F03700176E28 /* iTerm.app in Resources */ = {isa = PBXBuildFile; fileRef = E188D3F21520F03700176E28 /* iTerm.app */; };
 		E1CFAC71151E6E5D005721A7 /* QSiTerm2ActionProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CFAC70151E6E5D005721A7 /* QSiTerm2ActionProvider.m */; };
 		E1D1658315220B63004837CC /* QSiTerm2ObjectSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D1658215220B63004837CC /* QSiTerm2ObjectSource.m */; };
 		E1E4B4FE1518E4D00063F299 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E4B4FD1518E4D00063F299 /* Cocoa.framework */; };
@@ -24,7 +23,6 @@
 		CD7B3E4C2D600752008B8715 /* iTerm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iTerm.h; sourceTree = "<group>"; };
 		E121CA62173FF02E004AEF53 /* QSiTerm2Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSiTerm2Utils.h; sourceTree = "<group>"; };
 		E121CA63173FF02E004AEF53 /* QSiTerm2Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSiTerm2Utils.m; sourceTree = "<group>"; };
-		E188D3F21520F03700176E28 /* iTerm.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = iTerm.app; path = /Applications/iTerm.app; sourceTree = "<absolute>"; };
 		E1CFAC6F151E6E5D005721A7 /* QSiTerm2ActionProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSiTerm2ActionProvider.h; sourceTree = "<group>"; };
 		E1CFAC70151E6E5D005721A7 /* QSiTerm2ActionProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSiTerm2ActionProvider.m; sourceTree = "<group>"; };
 		E1D1658115220B63004837CC /* QSiTerm2ObjectSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSiTerm2ObjectSource.h; sourceTree = "<group>"; };
@@ -61,7 +59,6 @@
 		E1E4B4EE1518E4D00063F299 = {
 			isa = PBXGroup;
 			children = (
-				E188D3F21520F03700176E28 /* iTerm.app */,
 				E1E4B4FF1518E4D00063F299 /* iTerm2 */,
 				E1E4B4FC1518E4D00063F299 /* Frameworks */,
 				E1E4B4FB1518E4D00063F299 /* Products */,
@@ -188,7 +185,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1E4B5041518E4D00063F299 /* InfoPlist.strings in Resources */,
-				E188D3F31520F03700176E28 /* iTerm.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
